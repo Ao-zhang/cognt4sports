@@ -39,8 +39,8 @@ void MainWindow::readuser(){
             QByteArray array ;
             array = file.readLine();
             QList<QByteArray> array1= array.split(' ');
-            qDebug()<<array;
-            qDebug()<<array1.length();
+//            qDebug()<<array;
+//            qDebug()<<array1.length();
             if(array1.length()==4)
             {
                 map.insert(array1[0],User(array1[0],array1[1],array1[2],array1[3]));
@@ -87,8 +87,8 @@ void MainWindow::on_pushButton_6_clicked()
 
     if(map.contains(name))
     {
-        qDebug()<<name;
-        qDebug()<<password;
+//        qDebug()<<name;
+//        qDebug()<<password;
         QMap<QString,User>::iterator it = map.find(name);
         if(it.value().checkpassword(password))
         {
@@ -150,8 +150,9 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
     //python 环境初始化
-    QString path = QCoreApplication::applicationDirPath()+"/python_39/";
-    Py_SetPythonHome((wchar_t *)(reinterpret_cast<const wchar_t*>(path.utf16())));
+//    QString path = QCoreApplication::applicationDirPath()+"/py36/";
+//    qDebug() <<path;
+//    Py_SetPythonHome((wchar_t *)(reinterpret_cast<const wchar_t*>(path.utf16())));
     Py_Initialize();
     if(!Py_IsInitialized())
     {
@@ -163,16 +164,17 @@ void MainWindow::on_pushButton_2_clicked()
     PyRun_SimpleString("import sys");
     PyRun_SimpleString("sys.path.append(\"./\")");
     //python文件导入
-    PyObject *pModule = PyImport_ImportModule("helloworld");
+    PyObject *pModule = PyImport_ImportModule("flanker");
     if(!pModule)
     {
         PyErr_Print();
+
         qDebug()<< "Import python file error";
         return;
     }
 
     //python文件内模块导入
-    PyObject *pFunc = PyObject_GetAttrString(pModule,"hello");
+    PyObject *pFunc = PyObject_GetAttrString(pModule,"flanker");
     if(!pFunc)
     {
         PyErr_Print();

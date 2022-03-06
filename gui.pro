@@ -25,8 +25,8 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
-INCLUDEPATH += -I D:/Anaconda3/envs/py37/include
-LIBS += -LD:/Anaconda3/envs/py37/libs -lpython37
+INCLUDEPATH += -I D:/Anaconda3/envs/py36/include
+LIBS += -LD:/Anaconda3/envs/py36/libs -lpython36
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
