@@ -5,6 +5,8 @@
 #include <QPainter>
 #include <qstring.h>
 #include <qmap.h>
+#include <testinterface.h>
+#include <datamanage.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -32,40 +34,51 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+signals:
+    void toTest();
+    void toData();
+
 private slots:
 
-    void on_pushButton_4_clicked();
+    void on_toLoginBtn_clicked();
 
-    void on_pushButton_5_clicked();
+    void on_toRegisterBtn_clicked();
 
-    void on_pushButton_7_clicked();
+    void on_returnBeginBtn_clicked();
 
-    void on_pushButton_6_clicked();
+    void on_confirmLoginBtn_clicked();
 
-    void on_pushButton_8_clicked();
+    void on_confirmRegBtn_clicked();
 
-    void on_pushButton_9_clicked();
+    void on_returnBegBtn1_clicked();
 
-    void on_pushButton_clicked();
 
-    void on_pushButton_10_clicked();
+    void on_toDateBtn_clicked();
 
-    void on_pushButton_2_clicked();
 
-    void on_pushButton_11_clicked();
+    void on_toHelpBtn_clicked();
 
-    void on_pushButton_12_clicked();
+    void showMain();
 
-    void on_pushButton_14_clicked();
+    void on_returnMenu_clicked();
 
-    void on_pushButton_13_clicked();
+    void on_exitUserBtn_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_toThankBtn_clicked();
+
+    void on_goTestBtn_clicked();
+
+    void on_toInfoBtn_clicked();
+
+    void on_returnMenu_3_clicked();
+
+    void on_returnMenu_2_clicked();
 
 private:
     Ui::MainWindow *ui;
     UserMap map;
-
+    TestInterface * testui;
+    DataManage * dataui;
     void readuser();
     void writeuser(QString content);
 

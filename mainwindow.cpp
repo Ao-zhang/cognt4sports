@@ -3,9 +3,9 @@
 #include "QFileDialog"
 #include <QDebug>
 #include <QMessageBox>
-#undef slots
-#include "Python.h"
-#define slots Q_SLOTS
+#include <shlobj.h>
+#include <shellapi.h>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -13,12 +13,23 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
+//    ui->stackedWidget->setCurrentIndex(3);
+    testui=new TestInterface;
+    testui->setWindowIcon(QIcon("./img/logo1.ico"));
+    dataui=new DataManage;
+    dataui->setWindowIcon(QIcon("./img/logo1.ico"));
+    connect(this,SIGNAL(toTest()),testui,SLOT(showTest()));
+    connect(testui,SIGNAL(showMain()),this,SLOT(showMain()));
+    connect(this,SIGNAL(toData()),dataui,SLOT(showData()));
+    connect(dataui,SIGNAL(showMain()),this,SLOT(showMain()));
+    connect(testui,SIGNAL(showData()),dataui,SLOT(showData()));
     readuser();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete testui;
 }
 
 void MainWindow::paintEvent(QPaintEvent *)
@@ -39,8 +50,8 @@ void MainWindow::readuser(){
             QByteArray array ;
             array = file.readLine();
             QList<QByteArray> array1= array.split(' ');
-//            qDebug()<<array;
-//            qDebug()<<array1.length();
+            qDebug()<<array;
+            qDebug()<<array1.length();
             if(array1.length()==4)
             {
                 map.insert(array1[0],User(array1[0],array1[1],array1[2],array1[3]));
@@ -60,25 +71,25 @@ void MainWindow::writeuser(QString content){
     }
 }
 
-void MainWindow::on_pushButton_4_clicked()
+void MainWindow::on_toLoginBtn_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-void MainWindow::on_pushButton_5_clicked()
+void MainWindow::on_toRegisterBtn_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
 }
 
-void MainWindow::on_pushButton_7_clicked()
+void MainWindow::on_returnBeginBtn_clicked()
 {
     ui->lineEdit_5->setText("");
     ui->lineEdit_6->setText("");
     ui->stackedWidget->setCurrentIndex(0);
 }
 
-void MainWindow::on_pushButton_6_clicked()
-{
+void MainWindow::on_confirmLoginBtn_clicked()
+{      
     QString name = ui->lineEdit_5->text();
     QString password = ui->lineEdit_6->text();
 
@@ -87,8 +98,8 @@ void MainWindow::on_pushButton_6_clicked()
 
     if(map.contains(name))
     {
-//        qDebug()<<name;
-//        qDebug()<<password;
+        qDebug()<<name;
+        qDebug()<<password;
         QMap<QString,User>::iterator it = map.find(name);
         if(it.value().checkpassword(password))
         {
@@ -104,7 +115,7 @@ void MainWindow::on_pushButton_6_clicked()
 
 }
 
-void MainWindow::on_pushButton_8_clicked()
+void MainWindow::on_confirmRegBtn_clicked()
 {
     QString name = ui->lineEdit->text();
     QString password = ui->lineEdit_2->text();
@@ -132,7 +143,7 @@ void MainWindow::on_pushButton_8_clicked()
 
 }
 
-void MainWindow::on_pushButton_9_clicked()
+void MainWindow::on_returnBegBtn1_clicked()
 {
     ui->lineEdit->setText("");
     ui->lineEdit_2->setText("");
@@ -141,83 +152,61 @@ void MainWindow::on_pushButton_9_clicked()
     ui->stackedWidget->setCurrentIndex(0);
 }
 
-void MainWindow::on_pushButton_clicked()
+
+void MainWindow::on_toDateBtn_clicked()
+{
+    this->hide();
+    emit toData();
+}
+
+
+
+void MainWindow::showMain(){
+    this->show();
+}
+
+
+
+
+
+void MainWindow::on_toHelpBtn_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
+void MainWindow::on_returnMenu_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+void MainWindow::on_exitUserBtn_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
     ui->lineEdit_7->setText("未登录");
 }
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_toThankBtn_clicked()
 {
-    //python 环境初始化
-//    QString path = QCoreApplication::applicationDirPath()+"/py36/";
-//    qDebug() <<path;
-//    Py_SetPythonHome((wchar_t *)(reinterpret_cast<const wchar_t*>(path.utf16())));
-    Py_Initialize();
-    if(!Py_IsInitialized())
-    {
-        qDebug() << "python Initialized error";
-        PyErr_Print();
-        return;
-    }
-
-    PyRun_SimpleString("import sys");
-    PyRun_SimpleString("sys.path.append(\"./\")");
-    //python文件导入
-    PyObject *pModule = PyImport_ImportModule("flanker");
-    if(!pModule)
-    {
-        PyErr_Print();
-
-        qDebug()<< "Import python file error";
-        return;
-    }
-
-    //python文件内模块导入
-    PyObject *pFunc = PyObject_GetAttrString(pModule,"flanker");
-    if(!pFunc)
-    {
-        PyErr_Print();
-        qDebug() << "Import python module error";
-        return;
-    }
-
-    //python执行
-    PyObject_CallFunction(pFunc,NULL);
-    //python退出
-    Py_Finalize();
-    return;
+     ui->stackedWidget->setCurrentIndex(6);
 }
 
-
-void MainWindow::on_pushButton_10_clicked()
+void MainWindow::on_goTestBtn_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(4);
+    this->hide();
+    emit toTest();
 }
 
-void MainWindow::on_pushButton_11_clicked()
+void MainWindow::on_toInfoBtn_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(5);
+     ui->stackedWidget->setCurrentIndex(5);
 }
 
-
-
-void MainWindow::on_pushButton_12_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(6);
-}
-
-void MainWindow::on_pushButton_14_clicked()
+void MainWindow::on_returnMenu_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
 }
 
-void MainWindow::on_pushButton_13_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(3);
-}
-
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_returnMenu_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
 }
