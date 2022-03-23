@@ -4,6 +4,8 @@ exe/
 
 release/
 
+
+
 *.stash
 
 *.zip
@@ -16,6 +18,6 @@ Makefile*
 
 user?*
 
-sportTest*
+*lnk
 
 dist/
