@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1929</width>
-    <height>944</height>
+    <height>926</height>
    </rect>
   </property>
   <property name="font">
@@ -20,166 +20,437 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>700</x>
-      <y>-10</y>
-      <width>520</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>DejaVu Sans Mono</family>
-      <pointsize>-1</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font-size:60px;
-color:black;</string>
-    </property>
-    <property name="text">
-     <string>体育心理测试系统</string>
-    </property>
-   </widget>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>89</y>
+      <y>80</y>
       <width>1920</width>
-      <height>891</height>
+      <height>846</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="begin">
-     <widget class="QPushButton" name="toLoginBtn">
-      <property name="geometry">
-       <rect>
-        <x>870</x>
-        <y>270</y>
-        <width>161</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>13</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
-</string>
-      </property>
-      <property name="text">
-       <string>登录</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="toRegisterBtn">
       <property name="geometry">
        <rect>
-        <x>870</x>
-        <y>430</y>
-        <width>161</width>
-        <height>71</height>
+        <x>1230</x>
+        <y>410</y>
+        <width>81</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>13</pointsize>
+        <family>Microsoft YaHei</family>
+        <pointsize>10</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
-</string>
+       <string notr="true">color:black; 
+background-color:transparent;</string>
       </property>
       <property name="text">
-       <string>注册</string>
+       <string>免费注册</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
       </property>
      </widget>
-    </widget>
-    <widget class="QWidget" name="loginPage">
-     <widget class="QGraphicsView" name="graphicsView_5">
+     <widget class="QLabel" name="begin_background">
       <property name="geometry">
        <rect>
-        <x>470</x>
-        <y>100</y>
-        <width>1000</width>
-        <height>600</height>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>846</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="begin_left">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>-10</y>
+        <width>651</width>
+        <height>871</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(218, 227, 243);
-border-radius:50px;</string>
+       <string notr="true">background-color: rgb(255, 255, 255, 30%);</string>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>700</x>
-        <y>240</y>
+        <x>170</x>
+        <y>90</y>
+        <width>481</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>25</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>运动员认知功能测试平台</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>170</y>
+        <width>481</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>Athlete cognitive function test platform</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>330</y>
+        <width>451</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>欢迎来到cogn4sports，这是一个完全开源并且免费的运动</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>370</y>
+        <width>451</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>员认知功能测试平台，在这里您可以免费使用我们用 Psy-</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>410</y>
+        <width>451</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>choPY来编写的十种经典认知功能范式。我们致力于推动更</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>450</y>
+        <width>451</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>为便捷的认知功能测试软件，以期可以为广大科研工作者提</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>490</y>
+        <width>191</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>供一个更为便利的平台</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="run">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>620</y>
+        <width>201</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>750</y>
+        <width>72</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>关于软件</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>750</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>支持与服务</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>750</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>法律</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="graphicsView_7">
+      <property name="geometry">
+       <rect>
+        <x>1070</x>
+        <y>200</y>
+        <width>401</width>
+        <height>281</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255, 60%);
+border-radius:30px;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>1110</x>
+        <y>260</y>
         <width>81</width>
         <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>15</pointsize>
+        <family>Microsoft YaHei</family>
+        <pointsize>10</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
       <property name="text">
-       <string>用户名</string>
+       <string>登录账号:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>1110</x>
+        <y>330</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>登录密码:</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_5">
       <property name="geometry">
        <rect>
-        <x>900</x>
-        <y>240</y>
-        <width>241</width>
+        <x>1210</x>
+        <y>250</y>
+        <width>211</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Microsoft Sans Serif</family>
-        <pointsize>14</pointsize>
+        <family>Microsoft YaHei</family>
+        <pointsize>10</pointsize>
         <weight>50</weight>
         <italic>false</italic>
         <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Microsoft Sans Serif&quot;;</string>
+       <string notr="true">background-color:transparent;</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_6">
       <property name="geometry">
        <rect>
-        <x>900</x>
-        <y>360</y>
-        <width>241</width>
+        <x>1210</x>
+        <y>320</y>
+        <width>211</width>
         <height>41</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Microsoft Sans Serif&quot;;</string>
+       <string notr="true">background-color:transparent;</string>
       </property>
       <property name="text">
        <string/>
@@ -188,76 +459,157 @@ border-radius:50px;</string>
        <enum>QLineEdit::Password</enum>
       </property>
      </widget>
-     <widget class="QLabel" name="label_7">
+     <widget class="QPushButton" name="confirmLoginBtn">
       <property name="geometry">
        <rect>
-        <x>700</x>
-        <y>360</y>
+        <x>1110</x>
+        <y>410</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:red; 
+background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>登  录</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="forgetBtn">
+      <property name="geometry">
+       <rect>
+        <x>1360</x>
+        <y>410</y>
+        <width>81</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:black; 
+background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>忘记密码</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButton">
+      <property name="geometry">
+       <rect>
+        <x>1170</x>
+        <y>500</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton {
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 16px;
+    background-color: transparent;
+}
+QRadioButton::indicator {
+    width:                  10px;
+    height:                 10px;
+    border-radius:          7px;
+}
+
+QRadioButton::indicator:checked {
+    background-color:       rgb(0, 255, 0);
+    border:                 2px solid rgb(0, 255, 0);
+}
+
+QRadioButton::indicator:unchecked {
+    background-color:       rgb(255, 0, 0);
+    border:                 2px solid rgb(255, 0, 0);
+}</string>
+      </property>
+      <property name="text">
+       <string>同意协议</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="toRegisterBtn_2">
+      <property name="geometry">
+       <rect>
+        <x>1290</x>
+        <y>500</y>
         <width>81</width>
         <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>15</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>密码</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="confirmLoginBtn">
-      <property name="geometry">
-       <rect>
-        <x>790</x>
-        <y>560</y>
-        <width>111</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>13</pointsize>
+        <family>Microsoft YaHei</family>
+        <pointsize>-1</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
-</string>
+       <string notr="true">font-family: &quot;Microsoft YaHei&quot;;
+font-size: 16px;
+background-color: transparent;</string>
       </property>
       <property name="text">
-       <string>确认</string>
+       <string>免费注册</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="returnBeginBtn">
-      <property name="geometry">
-       <rect>
-        <x>1070</x>
-        <y>560</y>
-        <width>111</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>13</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
-</string>
-      </property>
-      <property name="text">
-       <string>返回</string>
-      </property>
-     </widget>
+     <zorder>begin_background</zorder>
+     <zorder>begin_left</zorder>
+     <zorder>label_11</zorder>
+     <zorder>label_12</zorder>
+     <zorder>label_13</zorder>
+     <zorder>label_14</zorder>
+     <zorder>label_15</zorder>
+     <zorder>label_16</zorder>
+     <zorder>label_5</zorder>
+     <zorder>run</zorder>
+     <zorder>label_18</zorder>
+     <zorder>label_19</zorder>
+     <zorder>label_20</zorder>
+     <zorder>graphicsView_7</zorder>
+     <zorder>label_21</zorder>
+     <zorder>label_22</zorder>
+     <zorder>lineEdit_5</zorder>
+     <zorder>lineEdit_6</zorder>
+     <zorder>confirmLoginBtn</zorder>
+     <zorder>toRegisterBtn</zorder>
+     <zorder>forgetBtn</zorder>
+     <zorder>radioButton</zorder>
+     <zorder>toRegisterBtn_2</zorder>
     </widget>
     <widget class="QWidget" name="registerPage">
      <widget class="QGraphicsView" name="graphicsView_4">
@@ -563,8 +915,8 @@ border-color: rgb(0, 85, 255);
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'DejaVu Sans Mono'; font-size:30pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;平台介绍：这是一个。。。。。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'DejaVu Sans Mono'; font-size:12pt;&quot;&gt;平台介绍：这是一个。。。。。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="toHelpBtn">
@@ -703,41 +1055,26 @@ border-color: rgb(0, 85, 255);
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Adobe Devanagari','DejaVu Sans Mono'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;本项目由....完成，感谢您的使用。此外，由衷希望得到您在使用中的测试数据，实现数据共享。。。。&lt;/p&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Adobe Devanagari'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Adobe Devanagari','DejaVu Sans Mono';&quot;&gt;本项目由....完成，感谢您的使用。此外，由衷希望得到您在使用中的测试数据，实现数据共享。。。。&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/logo1.png&quot; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
    </widget>
-   <widget class="Line" name="line">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>70</y>
-      <width>1921</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>1431</x>
-      <y>19</y>
-      <width>121</width>
+      <x>1250</x>
+      <y>30</y>
+      <width>81</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>15</pointsize>
+      <family>Microsoft YaHei</family>
+      <pointsize>10</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -749,14 +1086,23 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_7">
     <property name="geometry">
      <rect>
-      <x>1570</x>
-      <y>15</y>
+      <x>1350</x>
+      <y>30</y>
       <width>113</width>
-      <height>41</height>
+      <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Microsoft YaHei</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Microsoft Sans Serif&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>未登录</string>
@@ -765,36 +1111,63 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="exitUserBtn">
     <property name="geometry">
      <rect>
-      <x>1700</x>
-      <y>20</y>
+      <x>1630</x>
+      <y>30</y>
       <width>93</width>
       <height>28</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Microsoft YaHei</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 9pt &quot;Agency FB&quot;;</string>
+     <string notr="true">color:black; 
+background-color:transparent;</string>
     </property>
     <property name="text">
      <string>退出登录</string>
     </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
    </widget>
-   <widget class="QPushButton" name="toThankBtn">
+   <widget class="QLabel" name="logo">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>91</width>
+      <x>90</x>
+      <y>0</y>
+      <width>311</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_17">
+    <property name="geometry">
+     <rect>
+      <x>1480</x>
+      <y>30</y>
+      <width>81</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Adobe Devanagari</family>
-      <pointsize>12</pointsize>
+      <family>Microsoft YaHei</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
-     <string>致谢</string>
+     <string>（管理员）</string>
     </property>
    </widget>
   </widget>

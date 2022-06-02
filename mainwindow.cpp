@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    init_img();
+    ui->begin_left->installEventFilter(this);
     ui->stackedWidget->setCurrentIndex(0);
 //    ui->stackedWidget->setCurrentIndex(3);
     testui=new TestInterface;
@@ -30,6 +32,35 @@ MainWindow::~MainWindow()
 {
     delete ui;
     delete testui;
+}
+
+void MainWindow::init_img()
+{
+    QPixmap qimage("./img/background.png");
+    qimage = qimage.scaled(1920,846,Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
+    ui->begin_background->setPixmap(qimage);
+    ui->begin_background->show();
+
+    QPixmap qimage1("./img/logo2.png");
+    qimage1 = qimage1.scaled(311,81,Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
+    ui->logo->setPixmap(qimage1);
+    ui->logo->show();
+
+    QPixmap qimage2("./img/run.png");
+    qimage2 = qimage2.scaled(201,111,Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
+    ui->run->setPixmap(qimage2);
+    ui->run->show();
+}
+
+bool MainWindow::eventFilter(QObject *watched, QEvent *event)
+{
+    if(watched == ui->begin_left && event->type() == QEvent::Paint)
+    {
+        QPainter p(ui->begin_left);
+        p.setPen(QColor(0,0,0));
+        p.drawLine(85,175,535,175);
+        p.drawLine(85,745,535,745);
+    }
 }
 
 void MainWindow::paintEvent(QPaintEvent *)
@@ -62,31 +93,23 @@ void MainWindow::readuser(){
 }
 
 void MainWindow::writeuser(QString content){
+    QDir dir;
+    dir.mkpath("./data");
     QString filepath = "./data/user.txt";
     QFile file(filepath);
     bool isOK = file.open(QIODevice::WriteOnly | QIODevice::Append);
     if (isOK){
-        file.write("\n");
         file.write(content.toStdString().data());
+        file.write("\n");
     }
 }
 
-void MainWindow::on_toLoginBtn_clicked()
+
+void MainWindow::on_toRegisterBtn_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-void MainWindow::on_toRegisterBtn_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(2);
-}
-
-void MainWindow::on_returnBeginBtn_clicked()
-{
-    ui->lineEdit_5->setText("");
-    ui->lineEdit_6->setText("");
-    ui->stackedWidget->setCurrentIndex(0);
-}
 
 void MainWindow::on_confirmLoginBtn_clicked()
 {      
@@ -104,7 +127,7 @@ void MainWindow::on_confirmLoginBtn_clicked()
         if(it.value().checkpassword(password))
         {
             QMessageBox::information(NULL, "登录成功", "登录成功");
-            ui->stackedWidget->setCurrentIndex(3);
+            ui->stackedWidget->setCurrentIndex(2);
             ui->lineEdit_7->setText(name);
             return;
         }
@@ -137,7 +160,7 @@ void MainWindow::on_confirmRegBtn_clicked()
         map.insert(name,User(name,password,company,email));
         writeuser(name+" "+password+" "+company+" "+email);
         QMessageBox::information(NULL, "注册成功", "已自动登录");
-        ui->stackedWidget->setCurrentIndex(3);
+        ui->stackedWidget->setCurrentIndex(2);
         ui->lineEdit_7->setText(name);
     }
 
@@ -171,12 +194,12 @@ void MainWindow::showMain(){
 
 void MainWindow::on_toHelpBtn_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(4);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_returnMenu_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
 void MainWindow::on_exitUserBtn_clicked()
@@ -187,7 +210,7 @@ void MainWindow::on_exitUserBtn_clicked()
 
 void MainWindow::on_toThankBtn_clicked()
 {
-     ui->stackedWidget->setCurrentIndex(6);
+     ui->stackedWidget->setCurrentIndex(5);
 }
 
 void MainWindow::on_goTestBtn_clicked()
@@ -198,15 +221,15 @@ void MainWindow::on_goTestBtn_clicked()
 
 void MainWindow::on_toInfoBtn_clicked()
 {
-     ui->stackedWidget->setCurrentIndex(5);
+     ui->stackedWidget->setCurrentIndex(4);
 }
 
 void MainWindow::on_returnMenu_3_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
 void MainWindow::on_returnMenu_2_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidget->setCurrentIndex(2);
 }

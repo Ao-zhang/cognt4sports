@@ -40,11 +40,7 @@ signals:
 
 private slots:
 
-    void on_toLoginBtn_clicked();
-
     void on_toRegisterBtn_clicked();
-
-    void on_returnBeginBtn_clicked();
 
     void on_confirmLoginBtn_clicked();
 
@@ -74,6 +70,8 @@ private slots:
 
     void on_returnMenu_2_clicked();
 
+    bool eventFilter(QObject *watched, QEvent *event) ;
+
 private:
     Ui::MainWindow *ui;
     UserMap map;
@@ -81,6 +79,7 @@ private:
     DataManage * dataui;
     void readuser();
     void writeuser(QString content);
+    void init_img();
 
 protected:
     void paintEvent(QPaintEvent *);
