@@ -36,7 +36,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="begin">
      <widget class="QPushButton" name="toRegisterBtn">
@@ -515,7 +515,7 @@ background-color:transparent;</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton">
+     <widget class="QRadioButton" name="agreebutton">
       <property name="geometry">
        <rect>
         <x>1170</x>
@@ -581,7 +581,7 @@ font-size: 16px;
 background-color: transparent;</string>
       </property>
       <property name="text">
-       <string>免费注册</string>
+       <string>查看协议</string>
       </property>
       <property name="flat">
        <bool>true</bool>
@@ -608,7 +608,7 @@ background-color: transparent;</string>
      <zorder>confirmLoginBtn</zorder>
      <zorder>toRegisterBtn</zorder>
      <zorder>forgetBtn</zorder>
-     <zorder>radioButton</zorder>
+     <zorder>agreebutton</zorder>
      <zorder>toRegisterBtn_2</zorder>
     </widget>
     <widget class="QWidget" name="registerPage">
@@ -813,52 +813,13 @@ border-color: rgb(0, 85, 255);
      </widget>
     </widget>
     <widget class="QWidget" name="adminMenu">
-     <widget class="QGraphicsView" name="graphicsView_6">
-      <property name="geometry">
-       <rect>
-        <x>480</x>
-        <y>100</y>
-        <width>1000</width>
-        <height>600</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(218, 227, 243);
-border-radius:50px;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="toInfoBtn">
-      <property name="geometry">
-       <rect>
-        <x>840</x>
-        <y>580</y>
-        <width>251</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>13</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
-</string>
-      </property>
-      <property name="text">
-       <string> 关于软件</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="toDateBtn">
       <property name="geometry">
        <rect>
-        <x>840</x>
-        <y>320</y>
-        <width>251</width>
-        <height>71</height>
+        <x>310</x>
+        <y>450</y>
+        <width>200</width>
+        <height>60</height>
        </rect>
       </property>
       <property name="font">
@@ -869,8 +830,9 @@ border-color: rgb(0, 85, 255);
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
+       <string notr="true">border-radius:30px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
 </string>
       </property>
       <property name="text">
@@ -880,10 +842,10 @@ border-color: rgb(0, 85, 255);
      <widget class="QPushButton" name="goTestBtn">
       <property name="geometry">
        <rect>
-        <x>840</x>
-        <y>190</y>
-        <width>251</width>
-        <height>71</height>
+        <x>310</x>
+        <y>350</y>
+        <width>200</width>
+        <height>60</height>
        </rect>
       </property>
       <property name="font">
@@ -894,38 +856,22 @@ border-color: rgb(0, 85, 255);
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
+       <string notr="true">border-radius:30px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
 </string>
       </property>
       <property name="text">
        <string>进入测试</string>
       </property>
      </widget>
-     <widget class="QTextBrowser" name="introDuctionText">
-      <property name="geometry">
-       <rect>
-        <x>490</x>
-        <y>0</y>
-        <width>911</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="html">
-       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'DejaVu Sans Mono'; font-size:12pt;&quot;&gt;平台介绍：这是一个。。。。。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="toHelpBtn">
       <property name="geometry">
        <rect>
-        <x>840</x>
-        <y>450</y>
-        <width>251</width>
-        <height>71</height>
+        <x>310</x>
+        <y>550</y>
+        <width>200</width>
+        <height>60</height>
        </rect>
       </property>
       <property name="font">
@@ -936,14 +882,201 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
+       <string notr="true">border-radius:30px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
 </string>
       </property>
       <property name="text">
-       <string>使用帮助（manual）</string>
+       <string>使用帮助</string>
       </property>
      </widget>
+     <widget class="QLabel" name="begin_background_2">
+      <property name="geometry">
+       <rect>
+        <x>741</x>
+        <y>0</y>
+        <width>1181</width>
+        <height>841</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="begin_left_2">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>-10</y>
+        <width>751</width>
+        <height>871</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-top-color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>90</y>
+        <width>481</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>25</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>运动员认知功能测试平台</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>170</y>
+        <width>481</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>Athlete cognitive function test platform</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="goTestBtn_2">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>250</y>
+        <width>200</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:30px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
+      </property>
+      <property name="text">
+       <string>用户中心</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>750</y>
+        <width>491</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>760</y>
+        <width>271</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>8</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;
+color: grey;</string>
+      </property>
+      <property name="text">
+       <string>Athlete cognitive function test platform</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="run_2">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>640</y>
+        <width>241</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="begin_right">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>-10</y>
+        <width>1111</width>
+        <height>871</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255, 30%);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <zorder>begin_background_2</zorder>
+     <zorder>begin_left_2</zorder>
+     <zorder>toDateBtn</zorder>
+     <zorder>goTestBtn</zorder>
+     <zorder>toHelpBtn</zorder>
+     <zorder>label_6</zorder>
+     <zorder>label_23</zorder>
+     <zorder>goTestBtn_2</zorder>
+     <zorder>line</zorder>
+     <zorder>label_24</zorder>
+     <zorder>run_2</zorder>
+     <zorder>begin_right</zorder>
     </widget>
     <widget class="QWidget" name="helpPage">
      <widget class="QLabel" name="label_9">

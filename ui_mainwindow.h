@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -52,7 +53,7 @@ public:
     QLineEdit *lineEdit_6;
     QPushButton *confirmLoginBtn;
     QPushButton *forgetBtn;
-    QRadioButton *radioButton;
+    QRadioButton *agreebutton;
     QPushButton *toRegisterBtn_2;
     QWidget *registerPage;
     QGraphicsView *graphicsView_4;
@@ -67,12 +68,18 @@ public:
     QPushButton *confirmRegBtn;
     QPushButton *returnBegBtn1;
     QWidget *adminMenu;
-    QGraphicsView *graphicsView_6;
-    QPushButton *toInfoBtn;
     QPushButton *toDateBtn;
     QPushButton *goTestBtn;
-    QTextBrowser *introDuctionText;
     QPushButton *toHelpBtn;
+    QLabel *begin_background_2;
+    QLabel *begin_left_2;
+    QLabel *label_6;
+    QLabel *label_23;
+    QPushButton *goTestBtn_2;
+    QFrame *line;
+    QLabel *label_24;
+    QLabel *run_2;
+    QLabel *begin_right;
     QWidget *helpPage;
     QLabel *label_9;
     QPushButton *returnMenu_3;
@@ -250,11 +257,11 @@ public:
         forgetBtn->setStyleSheet(QString::fromUtf8("color:black; \n"
 "background-color:transparent;"));
         forgetBtn->setFlat(true);
-        radioButton = new QRadioButton(begin);
-        radioButton->setObjectName(QString::fromUtf8("radioButton"));
-        radioButton->setGeometry(QRect(1170, 500, 101, 31));
-        radioButton->setFont(font5);
-        radioButton->setStyleSheet(QString::fromUtf8("QRadioButton {\n"
+        agreebutton = new QRadioButton(begin);
+        agreebutton->setObjectName(QString::fromUtf8("agreebutton"));
+        agreebutton->setGeometry(QRect(1170, 500, 101, 31));
+        agreebutton->setFont(font5);
+        agreebutton->setStyleSheet(QString::fromUtf8("QRadioButton {\n"
 "    font-family: \"Microsoft YaHei\";\n"
 "    font-size: 16px;\n"
 "    background-color: transparent;\n"
@@ -304,7 +311,7 @@ public:
         confirmLoginBtn->raise();
         toRegisterBtn->raise();
         forgetBtn->raise();
-        radioButton->raise();
+        agreebutton->raise();
         toRegisterBtn_2->raise();
         registerPage = new QWidget();
         registerPage->setObjectName(QString::fromUtf8("registerPage"));
@@ -371,43 +378,93 @@ public:
         stackedWidget->addWidget(registerPage);
         adminMenu = new QWidget();
         adminMenu->setObjectName(QString::fromUtf8("adminMenu"));
-        graphicsView_6 = new QGraphicsView(adminMenu);
-        graphicsView_6->setObjectName(QString::fromUtf8("graphicsView_6"));
-        graphicsView_6->setGeometry(QRect(480, 100, 1000, 600));
-        graphicsView_6->setStyleSheet(QString::fromUtf8("background-color: rgb(218, 227, 243);\n"
-"border-radius:50px;"));
-        toInfoBtn = new QPushButton(adminMenu);
-        toInfoBtn->setObjectName(QString::fromUtf8("toInfoBtn"));
-        toInfoBtn->setGeometry(QRect(840, 580, 251, 71));
-        toInfoBtn->setFont(font9);
-        toInfoBtn->setStyleSheet(QString::fromUtf8("border:2px groove gray;border-radius:10px;padding:2px 4px;\n"
-"border-color: rgb(0, 85, 255);\n"
-""));
         toDateBtn = new QPushButton(adminMenu);
         toDateBtn->setObjectName(QString::fromUtf8("toDateBtn"));
-        toDateBtn->setGeometry(QRect(840, 320, 251, 71));
+        toDateBtn->setGeometry(QRect(310, 450, 200, 60));
         toDateBtn->setFont(font9);
-        toDateBtn->setStyleSheet(QString::fromUtf8("border:2px groove gray;border-radius:10px;padding:2px 4px;\n"
-"border-color: rgb(0, 85, 255);\n"
+        toDateBtn->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
 ""));
         goTestBtn = new QPushButton(adminMenu);
         goTestBtn->setObjectName(QString::fromUtf8("goTestBtn"));
-        goTestBtn->setGeometry(QRect(840, 190, 251, 71));
+        goTestBtn->setGeometry(QRect(310, 350, 200, 60));
         goTestBtn->setFont(font9);
-        goTestBtn->setStyleSheet(QString::fromUtf8("border:2px groove gray;border-radius:10px;padding:2px 4px;\n"
-"border-color: rgb(0, 85, 255);\n"
+        goTestBtn->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
 ""));
-        introDuctionText = new QTextBrowser(adminMenu);
-        introDuctionText->setObjectName(QString::fromUtf8("introDuctionText"));
-        introDuctionText->setGeometry(QRect(490, 0, 911, 61));
         toHelpBtn = new QPushButton(adminMenu);
         toHelpBtn->setObjectName(QString::fromUtf8("toHelpBtn"));
-        toHelpBtn->setGeometry(QRect(840, 450, 251, 71));
+        toHelpBtn->setGeometry(QRect(310, 550, 200, 60));
         toHelpBtn->setFont(font9);
-        toHelpBtn->setStyleSheet(QString::fromUtf8("border:2px groove gray;border-radius:10px;padding:2px 4px;\n"
-"border-color: rgb(0, 85, 255);\n"
+        toHelpBtn->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
 ""));
+        begin_background_2 = new QLabel(adminMenu);
+        begin_background_2->setObjectName(QString::fromUtf8("begin_background_2"));
+        begin_background_2->setGeometry(QRect(741, 0, 1181, 841));
+        begin_left_2 = new QLabel(adminMenu);
+        begin_left_2->setObjectName(QString::fromUtf8("begin_left_2"));
+        begin_left_2->setGeometry(QRect(-10, -10, 751, 871));
+        begin_left_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
+"border-top-color: rgb(0, 0, 0);"));
+        label_6 = new QLabel(adminMenu);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(170, 90, 481, 71));
+        label_6->setFont(font2);
+        label_6->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
+        label_23 = new QLabel(adminMenu);
+        label_23->setObjectName(QString::fromUtf8("label_23"));
+        label_23->setGeometry(QRect(170, 170, 481, 31));
+        label_23->setFont(font3);
+        label_23->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
+        goTestBtn_2 = new QPushButton(adminMenu);
+        goTestBtn_2->setObjectName(QString::fromUtf8("goTestBtn_2"));
+        goTestBtn_2->setGeometry(QRect(310, 250, 200, 60));
+        goTestBtn_2->setFont(font9);
+        goTestBtn_2->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        line = new QFrame(adminMenu);
+        line->setObjectName(QString::fromUtf8("line"));
+        line->setGeometry(QRect(-10, 750, 491, 16));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+        label_24 = new QLabel(adminMenu);
+        label_24->setObjectName(QString::fromUtf8("label_24"));
+        label_24->setGeometry(QRect(220, 760, 271, 21));
+        QFont font10;
+        font10.setFamily(QString::fromUtf8("Microsoft YaHei"));
+        font10.setPointSize(8);
+        font10.setBold(true);
+        font10.setWeight(75);
+        label_24->setFont(font10);
+        label_24->setStyleSheet(QString::fromUtf8("background-color:transparent;\n"
+"color: grey;"));
+        run_2 = new QLabel(adminMenu);
+        run_2->setObjectName(QString::fromUtf8("run_2"));
+        run_2->setGeometry(QRect(90, 640, 241, 111));
+        run_2->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
+        begin_right = new QLabel(adminMenu);
+        begin_right->setObjectName(QString::fromUtf8("begin_right"));
+        begin_right->setGeometry(QRect(770, -10, 1111, 871));
+        begin_right->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
         stackedWidget->addWidget(adminMenu);
+        begin_background_2->raise();
+        begin_left_2->raise();
+        toDateBtn->raise();
+        goTestBtn->raise();
+        toHelpBtn->raise();
+        label_6->raise();
+        label_23->raise();
+        goTestBtn_2->raise();
+        line->raise();
+        label_24->raise();
+        run_2->raise();
+        begin_right->raise();
         helpPage = new QWidget();
         helpPage->setObjectName(QString::fromUtf8("helpPage"));
         label_9 = new QLabel(helpPage);
@@ -423,13 +480,13 @@ public:
         label_10 = new QLabel(introductionPage);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(810, 200, 291, 81));
-        QFont font10;
-        font10.setFamily(QString::fromUtf8("Adobe Devanagari"));
-        font10.setPointSize(20);
-        font10.setBold(false);
-        font10.setItalic(false);
-        font10.setWeight(9);
-        label_10->setFont(font10);
+        QFont font11;
+        font11.setFamily(QString::fromUtf8("Adobe Devanagari"));
+        font11.setPointSize(20);
+        font11.setBold(false);
+        font11.setItalic(false);
+        font11.setWeight(9);
+        label_10->setFont(font11);
         label_10->setStyleSheet(QString::fromUtf8("font: 75 20pt \"Adobe Devanagari\";"));
         returnMenu_2 = new QPushButton(introductionPage);
         returnMenu_2->setObjectName(QString::fromUtf8("returnMenu_2"));
@@ -445,10 +502,10 @@ public:
         textArea = new QTextBrowser(gratitudePage);
         textArea->setObjectName(QString::fromUtf8("textArea"));
         textArea->setGeometry(QRect(620, 80, 651, 311));
-        QFont font11;
-        font11.setFamily(QString::fromUtf8("Adobe Devanagari"));
-        font11.setPointSize(12);
-        textArea->setFont(font11);
+        QFont font12;
+        font12.setFamily(QString::fromUtf8("Adobe Devanagari"));
+        font12.setPointSize(12);
+        textArea->setFont(font12);
         stackedWidget->addWidget(gratitudePage);
         label_8 = new QLabel(centralwidget);
         label_8->setObjectName(QString::fromUtf8("label_8"));
@@ -484,7 +541,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -512,23 +569,25 @@ public:
         lineEdit_6->setText(QString());
         confirmLoginBtn->setText(QCoreApplication::translate("MainWindow", "\347\231\273  \345\275\225", nullptr));
         forgetBtn->setText(QCoreApplication::translate("MainWindow", "\345\277\230\350\256\260\345\257\206\347\240\201", nullptr));
-        radioButton->setText(QCoreApplication::translate("MainWindow", "\345\220\214\346\204\217\345\215\217\350\256\256", nullptr));
-        toRegisterBtn_2->setText(QCoreApplication::translate("MainWindow", "\345\205\215\350\264\271\346\263\250\345\206\214", nullptr));
+        agreebutton->setText(QCoreApplication::translate("MainWindow", "\345\220\214\346\204\217\345\215\217\350\256\256", nullptr));
+        toRegisterBtn_2->setText(QCoreApplication::translate("MainWindow", "\346\237\245\347\234\213\345\215\217\350\256\256", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "\347\224\250\346\210\267\345\220\215", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "\345\257\206\347\240\201", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "\345\215\225\344\275\215", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "\351\202\256\347\256\261", nullptr));
         confirmRegBtn->setText(QCoreApplication::translate("MainWindow", "\347\241\256\350\256\244", nullptr));
         returnBegBtn1->setText(QCoreApplication::translate("MainWindow", "\350\277\224\345\233\236", nullptr));
-        toInfoBtn->setText(QCoreApplication::translate("MainWindow", " \345\205\263\344\272\216\350\275\257\344\273\266", nullptr));
         toDateBtn->setText(QCoreApplication::translate("MainWindow", "\346\225\260\346\215\256\345\257\274\345\207\272", nullptr));
         goTestBtn->setText(QCoreApplication::translate("MainWindow", "\350\277\233\345\205\245\346\265\213\350\257\225", nullptr));
-        introDuctionText->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'DejaVu Sans Mono'; font-size:12pt;\">\345\271\263\345\217\260\344\273\213\347\273\215\357\274\232\350\277\231\346\230\257\344\270\200\344\270\252\343\200\202\343\200\202\343\200\202\343\200\202\343\200\202</span></p></body></html>", nullptr));
-        toHelpBtn->setText(QCoreApplication::translate("MainWindow", "\344\275\277\347\224\250\345\270\256\345\212\251\357\274\210manual\357\274\211", nullptr));
+        toHelpBtn->setText(QCoreApplication::translate("MainWindow", "\344\275\277\347\224\250\345\270\256\345\212\251", nullptr));
+        begin_background_2->setText(QString());
+        begin_left_2->setText(QString());
+        label_6->setText(QCoreApplication::translate("MainWindow", "\350\277\220\345\212\250\345\221\230\350\256\244\347\237\245\345\212\237\350\203\275\346\265\213\350\257\225\345\271\263\345\217\260", nullptr));
+        label_23->setText(QCoreApplication::translate("MainWindow", "Athlete cognitive function test platform", nullptr));
+        goTestBtn_2->setText(QCoreApplication::translate("MainWindow", "\350\277\233\345\205\245\346\265\213\350\257\225", nullptr));
+        label_24->setText(QCoreApplication::translate("MainWindow", "Athlete cognitive function test platform", nullptr));
+        run_2->setText(QString());
+        begin_right->setText(QString());
         label_9->setText(QCoreApplication::translate("MainWindow", "\344\275\277\347\224\250\345\270\256\345\212\251\344\277\241\346\201\257\347\225\214\351\235\242", nullptr));
         returnMenu_3->setText(QCoreApplication::translate("MainWindow", "\350\277\224\345\233\236", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "\350\275\257\344\273\266\344\273\213\347\273\215\347\225\214\351\235\242", nullptr));

@@ -64,19 +64,20 @@ private slots:
 
     void on_goTestBtn_clicked();
 
-    void on_toInfoBtn_clicked();
-
     void on_returnMenu_3_clicked();
 
     void on_returnMenu_2_clicked();
 
     bool eventFilter(QObject *watched, QEvent *event) ;
 
+    void on_agreebutton_clicked(bool checked);
+
 private:
     Ui::MainWindow *ui;
     UserMap map;
     TestInterface * testui;
     DataManage * dataui;
+    int agree = 0;
     void readuser();
     void writeuser(QString content);
     void init_img();

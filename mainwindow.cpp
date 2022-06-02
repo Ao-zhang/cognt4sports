@@ -14,8 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     init_img();
     ui->begin_left->installEventFilter(this);
-    ui->stackedWidget->setCurrentIndex(0);
-//    ui->stackedWidget->setCurrentIndex(3);
+//    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget->setCurrentIndex(2);
     testui=new TestInterface;
     testui->setWindowIcon(QIcon("./img/logo1.ico"));
     dataui=new DataManage;
@@ -26,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(dataui,SIGNAL(showMain()),this,SLOT(showMain()));
     connect(testui,SIGNAL(showData()),dataui,SLOT(showData()));
     readuser();
+    agree = 0;
 }
 
 MainWindow::~MainWindow()
@@ -40,6 +41,8 @@ void MainWindow::init_img()
     qimage = qimage.scaled(1920,846,Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
     ui->begin_background->setPixmap(qimage);
     ui->begin_background->show();
+    ui->begin_background_2->setPixmap(qimage);
+    ui->begin_background_2->show();
 
     QPixmap qimage1("./img/logo2.png");
     qimage1 = qimage1.scaled(311,81,Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
@@ -50,6 +53,11 @@ void MainWindow::init_img()
     qimage2 = qimage2.scaled(201,111,Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
     ui->run->setPixmap(qimage2);
     ui->run->show();
+
+    QPixmap qimage3("./img/run2.png");
+    qimage3 = qimage3.scaled(241,111,Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
+    ui->run_2->setPixmap(qimage3);
+    ui->run_2->show();
 }
 
 bool MainWindow::eventFilter(QObject *watched, QEvent *event)
@@ -60,6 +68,14 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
         p.setPen(QColor(0,0,0));
         p.drawLine(85,175,535,175);
         p.drawLine(85,745,535,745);
+    }
+    if(watched == ui->begin_left_2 && event->type() == QEvent::Paint)
+    {
+        QPainter p(ui->begin_left_2);
+        p.setPen(QColor(0,0,0));
+        p.drawLine(10,10,20,10);
+        p.drawLine(85,175,535,175);
+        p.drawLine(0,800,520,800);
     }
 }
 
@@ -113,6 +129,11 @@ void MainWindow::on_toRegisterBtn_clicked()
 
 void MainWindow::on_confirmLoginBtn_clicked()
 {      
+    if(!agree)
+    {
+        QMessageBox::information(NULL, "提示", "请先同意协议");
+        return;
+    }
     QString name = ui->lineEdit_5->text();
     QString password = ui->lineEdit_6->text();
 
@@ -219,11 +240,6 @@ void MainWindow::on_goTestBtn_clicked()
     emit toTest();
 }
 
-void MainWindow::on_toInfoBtn_clicked()
-{
-     ui->stackedWidget->setCurrentIndex(4);
-}
-
 void MainWindow::on_returnMenu_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
@@ -232,4 +248,13 @@ void MainWindow::on_returnMenu_3_clicked()
 void MainWindow::on_returnMenu_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
+}
+
+
+void MainWindow::on_agreebutton_clicked(bool checked)
+{
+    if(checked)
+        agree = 1;
+    else
+        agree = 0;
 }
