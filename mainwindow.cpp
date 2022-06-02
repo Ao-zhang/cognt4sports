@@ -14,8 +14,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     init_img();
     ui->begin_left->installEventFilter(this);
-//    ui->stackedWidget->setCurrentIndex(0);
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->begin_left_2->installEventFilter(this);
+    ui->begin_right->installEventFilter(this);
+    ui->stackedWidget->setCurrentIndex(0);
+//    ui->stackedWidget->setCurrentIndex(2);
     testui=new TestInterface;
     testui->setWindowIcon(QIcon("./img/logo1.ico"));
     dataui=new DataManage;
@@ -73,9 +75,14 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
     {
         QPainter p(ui->begin_left_2);
         p.setPen(QColor(0,0,0));
-        p.drawLine(10,10,20,10);
-        p.drawLine(85,175,535,175);
-        p.drawLine(0,800,520,800);
+        p.drawLine(0,10,1111,10);
+    }
+    if(watched == ui->begin_right && event->type() == QEvent::Paint)
+    {
+        QPainter p(ui->begin_right);
+        p.setPen(QColor(0,0,0));
+        p.drawLine(330,120,330,500);
+        p.drawLine(330,620,330,770);
     }
 }
 
@@ -123,7 +130,7 @@ void MainWindow::writeuser(QString content){
 
 void MainWindow::on_toRegisterBtn_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget_2->setCurrentIndex(1);
 }
 
 
@@ -148,7 +155,7 @@ void MainWindow::on_confirmLoginBtn_clicked()
         if(it.value().checkpassword(password))
         {
             QMessageBox::information(NULL, "登录成功", "登录成功");
-            ui->stackedWidget->setCurrentIndex(2);
+            ui->stackedWidget->setCurrentIndex(1);
             ui->lineEdit_7->setText(name);
             return;
         }
@@ -181,7 +188,7 @@ void MainWindow::on_confirmRegBtn_clicked()
         map.insert(name,User(name,password,company,email));
         writeuser(name+" "+password+" "+company+" "+email);
         QMessageBox::information(NULL, "注册成功", "已自动登录");
-        ui->stackedWidget->setCurrentIndex(2);
+        ui->stackedWidget->setCurrentIndex(1);
         ui->lineEdit_7->setText(name);
     }
 
@@ -193,7 +200,7 @@ void MainWindow::on_returnBegBtn1_clicked()
     ui->lineEdit_2->setText("");
     ui->lineEdit_3->setText("");
     ui->lineEdit_4->setText("");
-    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget_2->setCurrentIndex(0);
 }
 
 
