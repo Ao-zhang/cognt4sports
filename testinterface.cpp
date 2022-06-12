@@ -1,5 +1,6 @@
 #include "testinterface.h"
 #include "ui_testinterface.h"
+#include <QMessageBox>
 
 TestInterface::TestInterface(QWidget *parent) :
     QMainWindow(parent),
@@ -101,4 +102,9 @@ void TestInterface::on_confirmLogBtn_clicked()
 void TestInterface::on_confirmRegBtn_clicked()
 {
     ui->stackedWidget->setCurrentIndex(6);
+}
+
+void TestInterface::on_startTestBtn_clicked()
+{
+    system("start .\\tests.exe 1 2 1 flanker");
 }

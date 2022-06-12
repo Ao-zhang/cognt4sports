@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
@@ -33,7 +32,6 @@ public:
     QLabel *label_5;
     QStackedWidget *stackedWidget;
     QWidget *menuPage;
-    QGraphicsView *graphicsView_5;
     QPushButton *chooseExistTaskBtn;
     QPushButton *createNewBtn;
     QPushButton *manageTaskBtn;
@@ -83,7 +81,6 @@ public:
     QLineEdit *lineEdit;
     QLabel *label_13;
     QLabel *label_14;
-    QGraphicsView *graphicsView_4;
     QLineEdit *lineEdit_4;
     QLabel *label_15;
     QLabel *label_16;
@@ -102,7 +99,6 @@ public:
     QLabel *label_18;
     QLabel *label_19;
     QLineEdit *lineEdit_10;
-    QGraphicsView *graphicsView_6;
     QPushButton *returnBegBtn;
     QLineEdit *lineEdit_11;
     QLabel *label_22;
@@ -117,6 +113,8 @@ public:
         TestInterface->resize(1924, 943);
         centralwidget = new QWidget(TestInterface);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        centralwidget->setAutoFillBackground(false);
+        centralwidget->setStyleSheet(QString::fromUtf8(""));
         line = new QFrame(centralwidget);
         line->setObjectName(QString::fromUtf8("line"));
         line->setGeometry(QRect(0, 81, 1921, 16));
@@ -132,17 +130,14 @@ public:
         font.setWeight(75);
         label_5->setFont(font);
         label_5->setStyleSheet(QString::fromUtf8("font-size:60px;\n"
-"color:black;"));
+"color:black;\n"
+"background-color: rgb(255, 255, 255,30%);"));
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        stackedWidget->setGeometry(QRect(-20, 90, 1911, 741));
+        stackedWidget->setGeometry(QRect(0, 90, 1924, 801));
+        stackedWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255,30%);"));
         menuPage = new QWidget();
         menuPage->setObjectName(QString::fromUtf8("menuPage"));
-        graphicsView_5 = new QGraphicsView(menuPage);
-        graphicsView_5->setObjectName(QString::fromUtf8("graphicsView_5"));
-        graphicsView_5->setGeometry(QRect(420, 60, 1121, 651));
-        graphicsView_5->setStyleSheet(QString::fromUtf8("background-color: rgb(218, 227, 243);\n"
-"border-radius:50px;"));
         chooseExistTaskBtn = new QPushButton(menuPage);
         chooseExistTaskBtn->setObjectName(QString::fromUtf8("chooseExistTaskBtn"));
         chooseExistTaskBtn->setGeometry(QRect(780, 160, 411, 71));
@@ -152,49 +147,86 @@ public:
         font1.setBold(true);
         font1.setWeight(75);
         chooseExistTaskBtn->setFont(font1);
+        chooseExistTaskBtn->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         createNewBtn = new QPushButton(menuPage);
         createNewBtn->setObjectName(QString::fromUtf8("createNewBtn"));
         createNewBtn->setGeometry(QRect(780, 290, 411, 71));
         createNewBtn->setFont(font1);
+        createNewBtn->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         manageTaskBtn = new QPushButton(menuPage);
         manageTaskBtn->setObjectName(QString::fromUtf8("manageTaskBtn"));
         manageTaskBtn->setGeometry(QRect(780, 420, 411, 71));
         manageTaskBtn->setFont(font1);
+        manageTaskBtn->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         checkResusltBtn = new QPushButton(menuPage);
         checkResusltBtn->setObjectName(QString::fromUtf8("checkResusltBtn"));
         checkResusltBtn->setGeometry(QRect(780, 550, 411, 71));
         checkResusltBtn->setFont(font1);
+        checkResusltBtn->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         stackedWidget->addWidget(menuPage);
         createNewPage = new QWidget();
         createNewPage->setObjectName(QString::fromUtf8("createNewPage"));
         pushButton_5 = new QPushButton(createNewPage);
         pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
         pushButton_5->setGeometry(QRect(1260, 210, 151, 111));
-        pushButton_5->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 170, 0);"));
+        pushButton_5->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         pushButton_9 = new QPushButton(createNewPage);
         pushButton_9->setObjectName(QString::fromUtf8("pushButton_9"));
         pushButton_9->setGeometry(QRect(910, 340, 151, 111));
-        pushButton_9->setStyleSheet(QString::fromUtf8("background-color: rgb(190, 144, 255);"));
+        pushButton_9->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         pushButton_12 = new QPushButton(createNewPage);
         pushButton_12->setObjectName(QString::fromUtf8("pushButton_12"));
         pushButton_12->setGeometry(QRect(730, 540, 151, 111));
-        pushButton_12->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);"));
+        pushButton_12->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         pushButton_7 = new QPushButton(createNewPage);
         pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
         pushButton_7->setGeometry(QRect(1260, 340, 151, 111));
-        pushButton_7->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 80, 97);"));
+        pushButton_7->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         pushButton_4 = new QPushButton(createNewPage);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setGeometry(QRect(1080, 210, 151, 111));
-        pushButton_4->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 170, 0);"));
+        pushButton_4->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         pushButton_8 = new QPushButton(createNewPage);
         pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
         pushButton_8->setGeometry(QRect(550, 340, 151, 111));
-        pushButton_8->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 201, 139);"));
+        pushButton_8->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         pushButton_10 = new QPushButton(createNewPage);
         pushButton_10->setObjectName(QString::fromUtf8("pushButton_10"));
         pushButton_10->setGeometry(QRect(730, 340, 151, 111));
-        pushButton_10->setStyleSheet(QString::fromUtf8("background-color: rgb(190, 144, 255);"));
+        pushButton_10->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         label_2 = new QLabel(createNewPage);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(530, 160, 121, 31));
@@ -206,38 +238,62 @@ public:
         pushButton_3 = new QPushButton(createNewPage);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(910, 210, 151, 111));
-        pushButton_3->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 170, 0);"));
+        pushButton_3->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         pushButton_6 = new QPushButton(createNewPage);
         pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
         pushButton_6->setGeometry(QRect(1080, 340, 151, 111));
-        pushButton_6->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 80, 97);"));
+        pushButton_6->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         pushButton_16 = new QPushButton(createNewPage);
         pushButton_16->setObjectName(QString::fromUtf8("pushButton_16"));
         pushButton_16->setGeometry(QRect(1080, 540, 151, 111));
-        pushButton_16->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 170, 0);"));
+        pushButton_16->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         pushButton_13 = new QPushButton(createNewPage);
         pushButton_13->setObjectName(QString::fromUtf8("pushButton_13"));
         pushButton_13->setGeometry(QRect(550, 540, 151, 111));
-        pushButton_13->setStyleSheet(QString::fromUtf8("background-color: rgb(71, 255, 139);"));
+        pushButton_13->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         label_4 = new QLabel(createNewPage);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(670, 160, 151, 31));
         pushButton_14 = new QPushButton(createNewPage);
         pushButton_14->setObjectName(QString::fromUtf8("pushButton_14"));
         pushButton_14->setGeometry(QRect(1260, 540, 151, 111));
-        pushButton_14->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 170, 0);"));
+        pushButton_14->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         pushButton_15 = new QPushButton(createNewPage);
         pushButton_15->setObjectName(QString::fromUtf8("pushButton_15"));
         pushButton_15->setGeometry(QRect(910, 540, 151, 111));
-        pushButton_15->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 170, 0);"));
+        pushButton_15->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         pushButton_2 = new QPushButton(createNewPage);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(730, 210, 151, 111));
-        pushButton_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);"));
+        pushButton_2->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         pushButton_11 = new QPushButton(createNewPage);
         pushButton_11->setObjectName(QString::fromUtf8("pushButton_11"));
         pushButton_11->setGeometry(QRect(550, 210, 151, 111));
-        pushButton_11->setStyleSheet(QString::fromUtf8("background-color: rgb(71, 255, 139);"));
+        pushButton_11->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         label = new QLabel(createNewPage);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(470, 30, 341, 61));
@@ -250,9 +306,17 @@ public:
         returnMenuBtn = new QPushButton(createNewPage);
         returnMenuBtn->setObjectName(QString::fromUtf8("returnMenuBtn"));
         returnMenuBtn->setGeometry(QRect(350, 10, 93, 28));
+        returnMenuBtn->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         beginTestBtn_2 = new QPushButton(createNewPage);
         beginTestBtn_2->setObjectName(QString::fromUtf8("beginTestBtn_2"));
         beginTestBtn_2->setGeometry(QRect(1370, 700, 91, 31));
+        beginTestBtn_2->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         stackedWidget->addWidget(createNewPage);
         selectExistPage = new QWidget();
         selectExistPage->setObjectName(QString::fromUtf8("selectExistPage"));
@@ -279,9 +343,17 @@ public:
         beginTestBtn = new QPushButton(selectExistPage);
         beginTestBtn->setObjectName(QString::fromUtf8("beginTestBtn"));
         beginTestBtn->setGeometry(QRect(880, 680, 161, 61));
+        beginTestBtn->setStyleSheet(QString::fromUtf8("border-radius:20px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         returnMenuBtn_2 = new QPushButton(selectExistPage);
         returnMenuBtn_2->setObjectName(QString::fromUtf8("returnMenuBtn_2"));
         returnMenuBtn_2->setGeometry(QRect(120, 20, 93, 28));
+        returnMenuBtn_2->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         stackedWidget->addWidget(selectExistPage);
         managePage = new QWidget();
         managePage->setObjectName(QString::fromUtf8("managePage"));
@@ -308,12 +380,24 @@ public:
         pushButton_22 = new QPushButton(managePage);
         pushButton_22->setObjectName(QString::fromUtf8("pushButton_22"));
         pushButton_22->setGeometry(QRect(510, 160, 141, 41));
+        pushButton_22->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         pushButton_23 = new QPushButton(managePage);
         pushButton_23->setObjectName(QString::fromUtf8("pushButton_23"));
         pushButton_23->setGeometry(QRect(350, 160, 141, 41));
+        pushButton_23->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         returnMenuBtn_3 = new QPushButton(managePage);
         returnMenuBtn_3->setObjectName(QString::fromUtf8("returnMenuBtn_3"));
         returnMenuBtn_3->setGeometry(QRect(90, 30, 93, 28));
+        returnMenuBtn_3->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         stackedWidget->addWidget(managePage);
         logPage = new QWidget();
         logPage->setObjectName(QString::fromUtf8("logPage"));
@@ -325,15 +409,17 @@ public:
         font3.setBold(true);
         font3.setWeight(75);
         toLoginBtn->setFont(font3);
-        toLoginBtn->setStyleSheet(QString::fromUtf8("border:2px groove gray;border-radius:10px;padding:2px 4px;\n"
-"border-color: rgb(0, 85, 255);\n"
+        toLoginBtn->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
 ""));
         toRegisterBtn = new QPushButton(logPage);
         toRegisterBtn->setObjectName(QString::fromUtf8("toRegisterBtn"));
         toRegisterBtn->setGeometry(QRect(880, 410, 161, 71));
         toRegisterBtn->setFont(font3);
-        toRegisterBtn->setStyleSheet(QString::fromUtf8("border:2px groove gray;border-radius:10px;padding:2px 4px;\n"
-"border-color: rgb(0, 85, 255);\n"
+        toRegisterBtn->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
 ""));
         stackedWidget->addWidget(logPage);
         createTestUserPage = new QWidget();
@@ -345,10 +431,11 @@ public:
         lineEdit_2->setEchoMode(QLineEdit::Password);
         returnBegBtn1 = new QPushButton(createTestUserPage);
         returnBegBtn1->setObjectName(QString::fromUtf8("returnBegBtn1"));
-        returnBegBtn1->setGeometry(QRect(1080, 550, 111, 51));
+        returnBegBtn1->setGeometry(QRect(1060, 550, 111, 51));
         returnBegBtn1->setFont(font3);
-        returnBegBtn1->setStyleSheet(QString::fromUtf8("border:2px groove gray;border-radius:10px;padding:2px 4px;\n"
-"border-color: rgb(0, 85, 255);\n"
+        returnBegBtn1->setStyleSheet(QString::fromUtf8("border-radius:20px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
 ""));
         label_11 = new QLabel(createTestUserPage);
         label_11->setObjectName(QString::fromUtf8("label_11"));
@@ -364,10 +451,11 @@ public:
         lineEdit_3->setStyleSheet(QString::fromUtf8("font: 14pt \"Microsoft Sans Serif\";"));
         confirmRegBtn = new QPushButton(createTestUserPage);
         confirmRegBtn->setObjectName(QString::fromUtf8("confirmRegBtn"));
-        confirmRegBtn->setGeometry(QRect(820, 550, 111, 51));
+        confirmRegBtn->setGeometry(QRect(800, 550, 111, 51));
         confirmRegBtn->setFont(font3);
-        confirmRegBtn->setStyleSheet(QString::fromUtf8("border:2px groove gray;border-radius:10px;padding:2px 4px;\n"
-"border-color: rgb(0, 85, 255);\n"
+        confirmRegBtn->setStyleSheet(QString::fromUtf8("border-radius:20px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
 ""));
         lineEdit = new QLineEdit(createTestUserPage);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
@@ -381,17 +469,6 @@ public:
         label_14->setObjectName(QString::fromUtf8("label_14"));
         label_14->setGeometry(QRect(800, 270, 101, 31));
         label_14->setFont(font4);
-        graphicsView_4 = new QGraphicsView(createTestUserPage);
-        graphicsView_4->setObjectName(QString::fromUtf8("graphicsView_4"));
-        graphicsView_4->setGeometry(QRect(480, 50, 1000, 600));
-        QFont font5;
-        font5.setFamily(QString::fromUtf8("Adobe Devanagari"));
-        font5.setPointSize(20);
-        font5.setBold(true);
-        font5.setWeight(75);
-        graphicsView_4->setFont(font5);
-        graphicsView_4->setStyleSheet(QString::fromUtf8("background-color: rgb(218, 227, 243);\n"
-"border-radius:50px;"));
         lineEdit_4 = new QLineEdit(createTestUserPage);
         lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
         lineEdit_4->setGeometry(QRect(920, 320, 241, 41));
@@ -419,14 +496,13 @@ public:
         label_12 = new QLabel(createTestUserPage);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setGeometry(QRect(940, 90, 161, 51));
-        QFont font6;
-        font6.setFamily(QString::fromUtf8("Adobe Devanagari"));
-        font6.setPointSize(18);
-        font6.setBold(true);
-        font6.setWeight(75);
-        label_12->setFont(font6);
+        QFont font5;
+        font5.setFamily(QString::fromUtf8("Adobe Devanagari"));
+        font5.setPointSize(18);
+        font5.setBold(true);
+        font5.setWeight(75);
+        label_12->setFont(font5);
         stackedWidget->addWidget(createTestUserPage);
-        graphicsView_4->raise();
         label_14->raise();
         label_11->raise();
         lineEdit_2->raise();
@@ -448,8 +524,9 @@ public:
         startTestBtn->setObjectName(QString::fromUtf8("startTestBtn"));
         startTestBtn->setGeometry(QRect(1240, 300, 161, 71));
         startTestBtn->setFont(font3);
-        startTestBtn->setStyleSheet(QString::fromUtf8("border:2px groove gray;border-radius:10px;padding:2px 4px;\n"
-"border-color: rgb(0, 85, 255);\n"
+        startTestBtn->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
 ""));
         listWidget_3 = new QListWidget(testPage);
         new QListWidgetItem(listWidget_3);
@@ -468,11 +545,11 @@ public:
         label_8 = new QLabel(testPage);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setGeometry(QRect(440, 20, 311, 51));
-        label_8->setFont(font6);
+        label_8->setFont(font5);
         label_10 = new QLabel(testPage);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(440, 330, 311, 51));
-        label_10->setFont(font6);
+        label_10->setFont(font5);
         listWidget_4 = new QListWidget(testPage);
         new QListWidgetItem(listWidget_4);
         new QListWidgetItem(listWidget_4);
@@ -494,13 +571,14 @@ public:
         confirmLogBtn->setObjectName(QString::fromUtf8("confirmLogBtn"));
         confirmLogBtn->setGeometry(QRect(790, 440, 111, 51));
         confirmLogBtn->setFont(font3);
-        confirmLogBtn->setStyleSheet(QString::fromUtf8("border:2px groove gray;border-radius:10px;padding:2px 4px;\n"
-"border-color: rgb(0, 85, 255);\n"
+        confirmLogBtn->setStyleSheet(QString::fromUtf8("border-radius:20px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
 ""));
         label_18 = new QLabel(loginPage);
         label_18->setObjectName(QString::fromUtf8("label_18"));
         label_18->setGeometry(QRect(880, 100, 201, 41));
-        label_18->setFont(font6);
+        label_18->setFont(font5);
         label_19 = new QLabel(loginPage);
         label_19->setObjectName(QString::fromUtf8("label_19"));
         label_19->setGeometry(QRect(790, 320, 91, 31));
@@ -509,18 +587,13 @@ public:
         lineEdit_10->setObjectName(QString::fromUtf8("lineEdit_10"));
         lineEdit_10->setGeometry(QRect(910, 210, 241, 41));
         lineEdit_10->setStyleSheet(QString::fromUtf8("font: 14pt \"Microsoft Sans Serif\";"));
-        graphicsView_6 = new QGraphicsView(loginPage);
-        graphicsView_6->setObjectName(QString::fromUtf8("graphicsView_6"));
-        graphicsView_6->setGeometry(QRect(540, 70, 891, 551));
-        graphicsView_6->setFont(font5);
-        graphicsView_6->setStyleSheet(QString::fromUtf8("background-color: rgb(218, 227, 243);\n"
-"border-radius:50px;"));
         returnBegBtn = new QPushButton(loginPage);
         returnBegBtn->setObjectName(QString::fromUtf8("returnBegBtn"));
         returnBegBtn->setGeometry(QRect(1040, 440, 111, 51));
         returnBegBtn->setFont(font3);
-        returnBegBtn->setStyleSheet(QString::fromUtf8("border:2px groove gray;border-radius:10px;padding:2px 4px;\n"
-"border-color: rgb(0, 85, 255);\n"
+        returnBegBtn->setStyleSheet(QString::fromUtf8("border-radius:20px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
 ""));
         lineEdit_11 = new QLineEdit(loginPage);
         lineEdit_11->setObjectName(QString::fromUtf8("lineEdit_11"));
@@ -532,7 +605,6 @@ public:
         label_22->setGeometry(QRect(790, 210, 81, 31));
         label_22->setFont(font4);
         stackedWidget->addWidget(loginPage);
-        graphicsView_6->raise();
         lineEdit_10->raise();
         lineEdit_11->raise();
         label_19->raise();
@@ -543,6 +615,10 @@ public:
         returnHome = new QPushButton(centralwidget);
         returnHome->setObjectName(QString::fromUtf8("returnHome"));
         returnHome->setGeometry(QRect(1690, 50, 151, 31));
+        returnHome->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         TestInterface->setCentralWidget(centralwidget);
         menubar = new QMenuBar(TestInterface);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -553,6 +629,9 @@ public:
         TestInterface->setStatusBar(statusbar);
 
         retranslateUi(TestInterface);
+
+        stackedWidget->setCurrentIndex(0);
+
 
         QMetaObject::connectSlotsByName(TestInterface);
     } // setupUi

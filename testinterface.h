@@ -57,6 +57,8 @@ private slots:
 
     void on_confirmRegBtn_clicked();
 
+    void on_startTestBtn_clicked();
+
 private:
     Ui::TestInterface *ui;
 };

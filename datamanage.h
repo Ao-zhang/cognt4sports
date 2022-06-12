@@ -21,6 +21,12 @@ public slots:
 private slots:
     void on_returnHome_clicked();
 
+    void on_manageTaskBtn_2_clicked();
+
+    void on_createNewBtn_2_clicked();
+
+    void on_chooseExistTaskBtn_2_clicked();
+
 private:
     Ui::DataManage *ui;
 };

@@ -15,9 +15,12 @@ MainWindow::MainWindow(QWidget *parent)
     init_img();
     ui->begin_left->installEventFilter(this);
     ui->begin_left_2->installEventFilter(this);
-    ui->begin_right->installEventFilter(this);
+    ui->page_3->installEventFilter(this);
+    ui->page_4->installEventFilter(this);
     ui->stackedWidget->setCurrentIndex(0);
-//    ui->stackedWidget->setCurrentIndex(2);
+//    ui->stackedWidget->setCurrentIndex(1);
+    on_goTestBtn_clicked();
+    on_goUserInfo_clicked();
     testui=new TestInterface;
     testui->setWindowIcon(QIcon("./img/logo1.ico"));
     dataui=new DataManage;
@@ -77,12 +80,20 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
         p.setPen(QColor(0,0,0));
         p.drawLine(0,10,1111,10);
     }
-    if(watched == ui->begin_right && event->type() == QEvent::Paint)
+    if(watched == ui->page_3 && event->type() == QEvent::Paint)
     {
-        QPainter p(ui->begin_right);
+        QPainter p(ui->page_3);
         p.setPen(QColor(0,0,0));
-        p.drawLine(330,120,330,500);
-        p.drawLine(330,620,330,770);
+        p.drawLine(310,120,310,500);
+        p.drawLine(310,620,310,710);
+    }
+    if(watched == ui->page_4 && event->type() == QEvent::Paint)
+    {
+        QPainter p(ui->page_4);
+        p.setPen(QColor(0,0,0));
+        p.drawLine(110,85,300,85);
+        p.drawLine(460,85,695,85);
+        p.drawLine(410,180,410,600);
     }
 }
 
@@ -206,8 +217,11 @@ void MainWindow::on_returnBegBtn1_clicked()
 
 void MainWindow::on_toDateBtn_clicked()
 {
-    this->hide();
-    emit toData();
+    this->ui->toDateBtn->setStyleSheet("border-radius:30px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+    this->ui->goUserInfo->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->goTestBtn->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->toHelpBtn->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->stackedWidget_3->setCurrentIndex(2);
 }
 
 
@@ -222,7 +236,12 @@ void MainWindow::showMain(){
 
 void MainWindow::on_toHelpBtn_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+//    ui->stackedWidget->setCurrentIndex(3);
+    this->ui->toHelpBtn->setStyleSheet("border-radius:30px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+    this->ui->goUserInfo->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->goTestBtn->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->toDateBtn->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->stackedWidget_3->setCurrentIndex(3);
 }
 
 void MainWindow::on_returnMenu_clicked()
@@ -243,8 +262,11 @@ void MainWindow::on_toThankBtn_clicked()
 
 void MainWindow::on_goTestBtn_clicked()
 {
-    this->hide();
-    emit toTest();
+    this->ui->goTestBtn->setStyleSheet("border-radius:30px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+    this->ui->goUserInfo->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->toDateBtn->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->toHelpBtn->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->stackedWidget_3->setCurrentIndex(1);
 }
 
 void MainWindow::on_returnMenu_3_clicked()
@@ -264,4 +286,40 @@ void MainWindow::on_agreebutton_clicked(bool checked)
         agree = 1;
     else
         agree = 0;
+}
+
+void MainWindow::on_goUserInfo_clicked()
+{
+    this->ui->goUserInfo->setStyleSheet("border-radius:30px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+    this->ui->goTestBtn->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->toDateBtn->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->toHelpBtn->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->stackedWidget_3->setCurrentIndex(0);
+}
+
+void MainWindow::on_goUserInfo_2_clicked()
+{
+        this->hide();
+        emit toTest();
+}
+
+void MainWindow::on_goUserInfo_4_clicked()
+{
+        this->hide();
+        emit toData();
+}
+
+void MainWindow::on_admininfo_clicked()
+{
+    QMessageBox::information(NULL, "提示", "请查看文件夹\"./data/测试项目/管理员id\"");
+}
+
+void MainWindow::on_testprogress_clicked()
+{
+    QMessageBox::information(NULL, "提示", "请查看文件夹\"./data\"");
+}
+
+void MainWindow::on_datalist_clicked()
+{
+    QMessageBox::information(NULL, "提示", "请查看文件夹\"./data/测试项目/管理员id/测试者id/测试次数\"");
 }

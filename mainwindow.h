@@ -72,6 +72,18 @@ private slots:
 
     void on_agreebutton_clicked(bool checked);
 
+    void on_goUserInfo_clicked();
+
+    void on_goUserInfo_2_clicked();
+
+    void on_goUserInfo_4_clicked();
+
+    void on_admininfo_clicked();
+
+    void on_testprogress_clicked();
+
+    void on_datalist_clicked();
+
 private:
     Ui::MainWindow *ui;
     UserMap map;

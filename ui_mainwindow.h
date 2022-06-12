@@ -71,38 +71,77 @@ public:
     QPushButton *confirmRegBtn;
     QGraphicsView *graphicsView_8;
     QWidget *adminMenu;
-    QPushButton *toDateBtn;
     QPushButton *goTestBtn;
     QPushButton *toHelpBtn;
     QLabel *begin_background_2;
     QLabel *begin_left_2;
     QLabel *label_6;
     QLabel *label_23;
-    QPushButton *goTestBtn_2;
+    QPushButton *goUserInfo;
     QFrame *line;
     QLabel *label_24;
     QLabel *run_2;
     QLabel *begin_right;
-    QLabel *label_25;
-    QLabel *label_26;
-    QTextEdit *textEdit;
-    QLabel *label_27;
-    QTextEdit *textEdit_2;
-    QLabel *label_28;
-    QTextEdit *textEdit_3;
-    QLabel *label_29;
-    QTextEdit *textEdit_4;
-    QLabel *label_30;
-    QTextEdit *textEdit_5;
-    QLabel *label_31;
-    QTextEdit *textEdit_6;
-    QLabel *label_32;
+    QStackedWidget *stackedWidget_3;
+    QWidget *page_3;
     QLabel *label_33;
-    QTextEdit *textEdit_7;
-    QLabel *label_34;
+    QLabel *label_30;
+    QLabel *label_26;
     QTextEdit *textEdit_8;
     QLabel *label_35;
+    QTextEdit *textEdit_2;
+    QLabel *label_32;
+    QTextEdit *textEdit_4;
+    QTextEdit *textEdit_6;
+    QTextEdit *textEdit;
+    QTextEdit *textEdit_3;
+    QLabel *label_29;
+    QLabel *label_28;
+    QLabel *label_27;
+    QTextEdit *textEdit_5;
+    QTextEdit *textEdit_7;
+    QLabel *label_25;
+    QLabel *label_34;
     QTextEdit *textEdit_9;
+    QLabel *label_31;
+    QFrame *line_3;
+    QFrame *line_4;
+    QWidget *page_4;
+    QPushButton *test1;
+    QPushButton *test2;
+    QPushButton *test1_2;
+    QPushButton *test2_2;
+    QPushButton *goUserInfo_2;
+    QPushButton *test2_3;
+    QPushButton *test1_3;
+    QPushButton *test1_4;
+    QPushButton *test1_5;
+    QPushButton *test2_4;
+    QPushButton *test2_5;
+    QPushButton *test1_6;
+    QPushButton *test1_7;
+    QPushButton *test1_8;
+    QPushButton *test2_6;
+    QPushButton *test2_7;
+    QPushButton *test1_9;
+    QFrame *line_2;
+    QFrame *line_5;
+    QLabel *label_7;
+    QLabel *label_36;
+    QFrame *line_6;
+    QLabel *label_37;
+    QLabel *label_38;
+    QWidget *page_7;
+    QPushButton *admininfo;
+    QPushButton *testprogress;
+    QPushButton *datalist;
+    QFrame *line_12;
+    QFrame *line_13;
+    QFrame *line_14;
+    QWidget *page_8;
+    QLabel *label_58;
+    QTextBrowser *textArea_2;
+    QPushButton *toDateBtn;
     QWidget *helpPage;
     QLabel *label_9;
     QPushButton *returnMenu_3;
@@ -418,14 +457,6 @@ public:
         stackedWidget_2->raise();
         adminMenu = new QWidget();
         adminMenu->setObjectName(QString::fromUtf8("adminMenu"));
-        toDateBtn = new QPushButton(adminMenu);
-        toDateBtn->setObjectName(QString::fromUtf8("toDateBtn"));
-        toDateBtn->setGeometry(QRect(310, 450, 200, 60));
-        toDateBtn->setFont(font8);
-        toDateBtn->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
-"background-color: rgb(85, 170, 255);\n"
-"color: rgb(255, 255, 255);\n"
-""));
         goTestBtn = new QPushButton(adminMenu);
         goTestBtn->setObjectName(QString::fromUtf8("goTestBtn"));
         goTestBtn->setGeometry(QRect(310, 350, 200, 60));
@@ -460,11 +491,11 @@ public:
         label_23->setGeometry(QRect(170, 170, 481, 31));
         label_23->setFont(font2);
         label_23->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
-        goTestBtn_2 = new QPushButton(adminMenu);
-        goTestBtn_2->setObjectName(QString::fromUtf8("goTestBtn_2"));
-        goTestBtn_2->setGeometry(QRect(310, 250, 200, 60));
-        goTestBtn_2->setFont(font8);
-        goTestBtn_2->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+        goUserInfo = new QPushButton(adminMenu);
+        goUserInfo->setObjectName(QString::fromUtf8("goUserInfo"));
+        goUserInfo->setGeometry(QRect(310, 250, 200, 60));
+        goUserInfo->setFont(font8);
+        goUserInfo->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
 "background-color: rgb(170, 0, 127);\n"
 "color: rgb(255, 255, 255);"));
         line = new QFrame(adminMenu);
@@ -490,131 +521,380 @@ public:
         begin_right = new QLabel(adminMenu);
         begin_right->setObjectName(QString::fromUtf8("begin_right"));
         begin_right->setGeometry(QRect(770, -10, 1111, 871));
-        begin_right->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
-        label_25 = new QLabel(adminMenu);
-        label_25->setObjectName(QString::fromUtf8("label_25"));
-        label_25->setGeometry(QRect(1060, 60, 81, 31));
-        label_25->setFont(font3);
-        label_25->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
-        label_26 = new QLabel(adminMenu);
-        label_26->setObjectName(QString::fromUtf8("label_26"));
-        label_26->setGeometry(QRect(1150, 110, 51, 31));
-        label_26->setFont(font3);
-        label_26->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
-        textEdit = new QTextEdit(adminMenu);
-        textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setGeometry(QRect(1260, 100, 351, 41));
-        textEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
-        label_27 = new QLabel(adminMenu);
-        label_27->setObjectName(QString::fromUtf8("label_27"));
-        label_27->setGeometry(QRect(1150, 180, 51, 31));
-        label_27->setFont(font3);
-        label_27->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
-        textEdit_2 = new QTextEdit(adminMenu);
-        textEdit_2->setObjectName(QString::fromUtf8("textEdit_2"));
-        textEdit_2->setGeometry(QRect(1260, 170, 351, 41));
-        textEdit_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
-        label_28 = new QLabel(adminMenu);
-        label_28->setObjectName(QString::fromUtf8("label_28"));
-        label_28->setGeometry(QRect(1150, 250, 81, 31));
-        label_28->setFont(font3);
-        label_28->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
-        textEdit_3 = new QTextEdit(adminMenu);
-        textEdit_3->setObjectName(QString::fromUtf8("textEdit_3"));
-        textEdit_3->setGeometry(QRect(1260, 240, 351, 41));
-        textEdit_3->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
-        label_29 = new QLabel(adminMenu);
-        label_29->setObjectName(QString::fromUtf8("label_29"));
-        label_29->setGeometry(QRect(1150, 320, 51, 31));
-        label_29->setFont(font3);
-        label_29->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
-        textEdit_4 = new QTextEdit(adminMenu);
-        textEdit_4->setObjectName(QString::fromUtf8("textEdit_4"));
-        textEdit_4->setGeometry(QRect(1260, 310, 351, 41));
-        textEdit_4->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
-        label_30 = new QLabel(adminMenu);
-        label_30->setObjectName(QString::fromUtf8("label_30"));
-        label_30->setGeometry(QRect(1150, 390, 81, 31));
-        label_30->setFont(font3);
-        label_30->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
-        textEdit_5 = new QTextEdit(adminMenu);
-        textEdit_5->setObjectName(QString::fromUtf8("textEdit_5"));
-        textEdit_5->setGeometry(QRect(1260, 380, 351, 41));
-        textEdit_5->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
-        label_31 = new QLabel(adminMenu);
-        label_31->setObjectName(QString::fromUtf8("label_31"));
-        label_31->setGeometry(QRect(1150, 460, 91, 31));
-        label_31->setFont(font3);
-        label_31->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
-        textEdit_6 = new QTextEdit(adminMenu);
-        textEdit_6->setObjectName(QString::fromUtf8("textEdit_6"));
-        textEdit_6->setGeometry(QRect(1260, 450, 351, 41));
-        textEdit_6->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
-        label_32 = new QLabel(adminMenu);
-        label_32->setObjectName(QString::fromUtf8("label_32"));
-        label_32->setGeometry(QRect(1060, 540, 81, 31));
-        label_32->setFont(font3);
-        label_32->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
-        label_33 = new QLabel(adminMenu);
+        begin_right->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 45%);"));
+        stackedWidget_3 = new QStackedWidget(adminMenu);
+        stackedWidget_3->setObjectName(QString::fromUtf8("stackedWidget_3"));
+        stackedWidget_3->setGeometry(QRect(810, 10, 1051, 741));
+        stackedWidget_3->setStyleSheet(QString::fromUtf8("background-color: transparent;"));
+        page_3 = new QWidget();
+        page_3->setObjectName(QString::fromUtf8("page_3"));
+        label_33 = new QLabel(page_3);
         label_33->setObjectName(QString::fromUtf8("label_33"));
-        label_33->setGeometry(QRect(1150, 610, 71, 31));
+        label_33->setGeometry(QRect(350, 620, 71, 31));
         label_33->setFont(font3);
         label_33->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
-        textEdit_7 = new QTextEdit(adminMenu);
-        textEdit_7->setObjectName(QString::fromUtf8("textEdit_7"));
-        textEdit_7->setGeometry(QRect(1260, 600, 351, 41));
-        textEdit_7->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
-        label_34 = new QLabel(adminMenu);
-        label_34->setObjectName(QString::fromUtf8("label_34"));
-        label_34->setGeometry(QRect(1150, 670, 71, 31));
-        label_34->setFont(font3);
-        label_34->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
-        textEdit_8 = new QTextEdit(adminMenu);
+        label_30 = new QLabel(page_3);
+        label_30->setObjectName(QString::fromUtf8("label_30"));
+        label_30->setGeometry(QRect(350, 400, 81, 31));
+        label_30->setFont(font3);
+        label_30->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
+        label_26 = new QLabel(page_3);
+        label_26->setObjectName(QString::fromUtf8("label_26"));
+        label_26->setGeometry(QRect(350, 120, 51, 31));
+        label_26->setFont(font3);
+        label_26->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
+        textEdit_8 = new QTextEdit(page_3);
         textEdit_8->setObjectName(QString::fromUtf8("textEdit_8"));
-        textEdit_8->setGeometry(QRect(1260, 660, 351, 41));
+        textEdit_8->setGeometry(QRect(460, 670, 351, 41));
         textEdit_8->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
-        label_35 = new QLabel(adminMenu);
+        label_35 = new QLabel(page_3);
         label_35->setObjectName(QString::fromUtf8("label_35"));
-        label_35->setGeometry(QRect(1150, 730, 81, 31));
+        label_35->setGeometry(QRect(350, 740, 81, 31));
         label_35->setFont(font3);
         label_35->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
-        textEdit_9 = new QTextEdit(adminMenu);
+        textEdit_2 = new QTextEdit(page_3);
+        textEdit_2->setObjectName(QString::fromUtf8("textEdit_2"));
+        textEdit_2->setGeometry(QRect(460, 180, 351, 41));
+        textEdit_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
+        label_32 = new QLabel(page_3);
+        label_32->setObjectName(QString::fromUtf8("label_32"));
+        label_32->setGeometry(QRect(260, 550, 81, 31));
+        label_32->setFont(font3);
+        label_32->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
+        textEdit_4 = new QTextEdit(page_3);
+        textEdit_4->setObjectName(QString::fromUtf8("textEdit_4"));
+        textEdit_4->setGeometry(QRect(460, 320, 351, 41));
+        textEdit_4->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
+        textEdit_6 = new QTextEdit(page_3);
+        textEdit_6->setObjectName(QString::fromUtf8("textEdit_6"));
+        textEdit_6->setGeometry(QRect(460, 460, 351, 41));
+        textEdit_6->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
+        textEdit = new QTextEdit(page_3);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        textEdit->setGeometry(QRect(460, 110, 351, 41));
+        textEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
+        textEdit_3 = new QTextEdit(page_3);
+        textEdit_3->setObjectName(QString::fromUtf8("textEdit_3"));
+        textEdit_3->setGeometry(QRect(460, 250, 351, 41));
+        textEdit_3->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
+        label_29 = new QLabel(page_3);
+        label_29->setObjectName(QString::fromUtf8("label_29"));
+        label_29->setGeometry(QRect(350, 330, 51, 31));
+        label_29->setFont(font3);
+        label_29->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
+        label_28 = new QLabel(page_3);
+        label_28->setObjectName(QString::fromUtf8("label_28"));
+        label_28->setGeometry(QRect(350, 260, 81, 31));
+        label_28->setFont(font3);
+        label_28->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
+        label_27 = new QLabel(page_3);
+        label_27->setObjectName(QString::fromUtf8("label_27"));
+        label_27->setGeometry(QRect(350, 190, 51, 31));
+        label_27->setFont(font3);
+        label_27->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
+        textEdit_5 = new QTextEdit(page_3);
+        textEdit_5->setObjectName(QString::fromUtf8("textEdit_5"));
+        textEdit_5->setGeometry(QRect(460, 390, 351, 41));
+        textEdit_5->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
+        textEdit_7 = new QTextEdit(page_3);
+        textEdit_7->setObjectName(QString::fromUtf8("textEdit_7"));
+        textEdit_7->setGeometry(QRect(460, 610, 351, 41));
+        textEdit_7->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
+        label_25 = new QLabel(page_3);
+        label_25->setObjectName(QString::fromUtf8("label_25"));
+        label_25->setGeometry(QRect(260, 70, 81, 31));
+        label_25->setFont(font3);
+        label_25->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
+        label_34 = new QLabel(page_3);
+        label_34->setObjectName(QString::fromUtf8("label_34"));
+        label_34->setGeometry(QRect(350, 680, 71, 31));
+        label_34->setFont(font3);
+        label_34->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
+        textEdit_9 = new QTextEdit(page_3);
         textEdit_9->setObjectName(QString::fromUtf8("textEdit_9"));
-        textEdit_9->setGeometry(QRect(1260, 720, 351, 41));
+        textEdit_9->setGeometry(QRect(460, 730, 351, 41));
         textEdit_9->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255, 30%);"));
+        label_31 = new QLabel(page_3);
+        label_31->setObjectName(QString::fromUtf8("label_31"));
+        label_31->setGeometry(QRect(350, 470, 91, 31));
+        label_31->setFont(font3);
+        label_31->setStyleSheet(QString::fromUtf8("background-color:transparent;"));
+        line_3 = new QFrame(page_3);
+        line_3->setObjectName(QString::fromUtf8("line_3"));
+        line_3->setGeometry(QRect(293, 120, 20, 371));
+        line_3->setFrameShape(QFrame::VLine);
+        line_3->setFrameShadow(QFrame::Sunken);
+        line_4 = new QFrame(page_3);
+        line_4->setObjectName(QString::fromUtf8("line_4"));
+        line_4->setGeometry(QRect(290, 600, 20, 111));
+        line_4->setFrameShape(QFrame::VLine);
+        line_4->setFrameShadow(QFrame::Sunken);
+        stackedWidget_3->addWidget(page_3);
+        page_4 = new QWidget();
+        page_4->setObjectName(QString::fromUtf8("page_4"));
+        test1 = new QPushButton(page_4);
+        test1->setObjectName(QString::fromUtf8("test1"));
+        test1->setGeometry(QRect(130, 180, 200, 60));
+        test1->setFont(font8);
+        test1->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        test2 = new QPushButton(page_4);
+        test2->setObjectName(QString::fromUtf8("test2"));
+        test2->setGeometry(QRect(130, 270, 200, 60));
+        test2->setFont(font8);
+        test2->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        test1_2 = new QPushButton(page_4);
+        test1_2->setObjectName(QString::fromUtf8("test1_2"));
+        test1_2->setGeometry(QRect(130, 360, 200, 60));
+        test1_2->setFont(font8);
+        test1_2->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        test2_2 = new QPushButton(page_4);
+        test2_2->setObjectName(QString::fromUtf8("test2_2"));
+        test2_2->setGeometry(QRect(130, 540, 200, 60));
+        test2_2->setFont(font8);
+        test2_2->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        goUserInfo_2 = new QPushButton(page_4);
+        goUserInfo_2->setObjectName(QString::fromUtf8("goUserInfo_2"));
+        goUserInfo_2->setGeometry(QRect(280, 640, 200, 60));
+        goUserInfo_2->setFont(font8);
+        goUserInfo_2->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(170, 0, 127);\n"
+"color: rgb(255, 255, 255);"));
+        test2_3 = new QPushButton(page_4);
+        test2_3->setObjectName(QString::fromUtf8("test2_3"));
+        test2_3->setGeometry(QRect(600, 640, 200, 60));
+        test2_3->setFont(font8);
+        test2_3->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        test1_3 = new QPushButton(page_4);
+        test1_3->setObjectName(QString::fromUtf8("test1_3"));
+        test1_3->setGeometry(QRect(130, 450, 200, 60));
+        test1_3->setFont(font8);
+        test1_3->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        test1_4 = new QPushButton(page_4);
+        test1_4->setObjectName(QString::fromUtf8("test1_4"));
+        test1_4->setGeometry(QRect(490, 180, 200, 60));
+        test1_4->setFont(font8);
+        test1_4->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        test1_5 = new QPushButton(page_4);
+        test1_5->setObjectName(QString::fromUtf8("test1_5"));
+        test1_5->setGeometry(QRect(490, 360, 200, 60));
+        test1_5->setFont(font8);
+        test1_5->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        test2_4 = new QPushButton(page_4);
+        test2_4->setObjectName(QString::fromUtf8("test2_4"));
+        test2_4->setGeometry(QRect(490, 270, 200, 60));
+        test2_4->setFont(font8);
+        test2_4->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        test2_5 = new QPushButton(page_4);
+        test2_5->setObjectName(QString::fromUtf8("test2_5"));
+        test2_5->setGeometry(QRect(490, 540, 200, 60));
+        test2_5->setFont(font8);
+        test2_5->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        test1_6 = new QPushButton(page_4);
+        test1_6->setObjectName(QString::fromUtf8("test1_6"));
+        test1_6->setGeometry(QRect(490, 450, 200, 60));
+        test1_6->setFont(font8);
+        test1_6->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        test1_7 = new QPushButton(page_4);
+        test1_7->setObjectName(QString::fromUtf8("test1_7"));
+        test1_7->setGeometry(QRect(750, 180, 200, 60));
+        test1_7->setFont(font8);
+        test1_7->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        test1_8 = new QPushButton(page_4);
+        test1_8->setObjectName(QString::fromUtf8("test1_8"));
+        test1_8->setGeometry(QRect(750, 360, 200, 60));
+        test1_8->setFont(font8);
+        test1_8->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        test2_6 = new QPushButton(page_4);
+        test2_6->setObjectName(QString::fromUtf8("test2_6"));
+        test2_6->setGeometry(QRect(750, 270, 200, 60));
+        test2_6->setFont(font8);
+        test2_6->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        test2_7 = new QPushButton(page_4);
+        test2_7->setObjectName(QString::fromUtf8("test2_7"));
+        test2_7->setGeometry(QRect(750, 540, 200, 60));
+        test2_7->setFont(font8);
+        test2_7->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        test1_9 = new QPushButton(page_4);
+        test1_9->setObjectName(QString::fromUtf8("test1_9"));
+        test1_9->setGeometry(QRect(750, 450, 200, 60));
+        test1_9->setFont(font8);
+        test1_9->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        line_2 = new QFrame(page_4);
+        line_2->setObjectName(QString::fromUtf8("line_2"));
+        line_2->setGeometry(QRect(400, 190, 20, 411));
+        line_2->setStyleSheet(QString::fromUtf8(""));
+        line_2->setFrameShape(QFrame::VLine);
+        line_2->setFrameShadow(QFrame::Sunken);
+        line_5 = new QFrame(page_4);
+        line_5->setObjectName(QString::fromUtf8("line_5"));
+        line_5->setGeometry(QRect(110, 70, 191, 16));
+        line_5->setFrameShape(QFrame::HLine);
+        line_5->setFrameShadow(QFrame::Sunken);
+        label_7 = new QLabel(page_4);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(110, 40, 161, 31));
+        QFont font10;
+        font10.setFamily(QString::fromUtf8("Microsoft YaHei"));
+        font10.setPointSize(15);
+        font10.setBold(true);
+        font10.setWeight(75);
+        label_7->setFont(font10);
+        label_36 = new QLabel(page_4);
+        label_36->setObjectName(QString::fromUtf8("label_36"));
+        label_36->setGeometry(QRect(230, 90, 81, 21));
+        QFont font11;
+        font11.setFamily(QString::fromUtf8("Microsoft YaHei"));
+        font11.setPointSize(11);
+        label_36->setFont(font11);
+        label_36->setStyleSheet(QString::fromUtf8("color: rgb(98, 98, 98);"));
+        line_6 = new QFrame(page_4);
+        line_6->setObjectName(QString::fromUtf8("line_6"));
+        line_6->setGeometry(QRect(460, 70, 231, 16));
+        line_6->setFrameShape(QFrame::HLine);
+        line_6->setFrameShadow(QFrame::Sunken);
+        label_37 = new QLabel(page_4);
+        label_37->setObjectName(QString::fromUtf8("label_37"));
+        label_37->setGeometry(QRect(460, 40, 161, 31));
+        label_37->setFont(font10);
+        label_38 = new QLabel(page_4);
+        label_38->setObjectName(QString::fromUtf8("label_38"));
+        label_38->setGeometry(QRect(570, 90, 131, 21));
+        label_38->setFont(font11);
+        label_38->setStyleSheet(QString::fromUtf8("color: rgb(98, 98, 98);"));
+        stackedWidget_3->addWidget(page_4);
+        page_7 = new QWidget();
+        page_7->setObjectName(QString::fromUtf8("page_7"));
+        admininfo = new QPushButton(page_7);
+        admininfo->setObjectName(QString::fromUtf8("admininfo"));
+        admininfo->setGeometry(QRect(430, 240, 200, 60));
+        admininfo->setFont(font8);
+        admininfo->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        testprogress = new QPushButton(page_7);
+        testprogress->setObjectName(QString::fromUtf8("testprogress"));
+        testprogress->setGeometry(QRect(430, 380, 200, 60));
+        testprogress->setFont(font8);
+        testprogress->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        datalist = new QPushButton(page_7);
+        datalist->setObjectName(QString::fromUtf8("datalist"));
+        datalist->setGeometry(QRect(430, 520, 200, 60));
+        datalist->setFont(font8);
+        datalist->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        line_12 = new QFrame(page_7);
+        line_12->setObjectName(QString::fromUtf8("line_12"));
+        line_12->setGeometry(QRect(400, 190, 20, 411));
+        line_12->setStyleSheet(QString::fromUtf8(""));
+        line_12->setFrameShape(QFrame::VLine);
+        line_12->setFrameShadow(QFrame::Sunken);
+        line_13 = new QFrame(page_7);
+        line_13->setObjectName(QString::fromUtf8("line_13"));
+        line_13->setGeometry(QRect(460, 70, 231, 16));
+        line_13->setFrameShape(QFrame::HLine);
+        line_13->setFrameShadow(QFrame::Sunken);
+        line_14 = new QFrame(page_7);
+        line_14->setObjectName(QString::fromUtf8("line_14"));
+        line_14->setGeometry(QRect(110, 70, 191, 16));
+        line_14->setFrameShape(QFrame::HLine);
+        line_14->setFrameShadow(QFrame::Sunken);
+        stackedWidget_3->addWidget(page_7);
+        page_8 = new QWidget();
+        page_8->setObjectName(QString::fromUtf8("page_8"));
+        label_58 = new QLabel(page_8);
+        label_58->setObjectName(QString::fromUtf8("label_58"));
+        label_58->setGeometry(QRect(460, 130, 141, 41));
+        QFont font12;
+        font12.setFamily(QString::fromUtf8("Microsoft YaHei"));
+        font12.setPointSize(20);
+        font12.setBold(true);
+        font12.setWeight(75);
+        label_58->setFont(font12);
+        textArea_2 = new QTextBrowser(page_8);
+        textArea_2->setObjectName(QString::fromUtf8("textArea_2"));
+        textArea_2->setGeometry(QRect(230, 230, 651, 311));
+        QFont font13;
+        font13.setFamily(QString::fromUtf8("Microsoft YaHei"));
+        font13.setPointSize(12);
+        textArea_2->setFont(font13);
+        textArea_2->setStyleSheet(QString::fromUtf8("border:0px;"));
+        stackedWidget_3->addWidget(page_8);
+        toDateBtn = new QPushButton(adminMenu);
+        toDateBtn->setObjectName(QString::fromUtf8("toDateBtn"));
+        toDateBtn->setGeometry(QRect(310, 450, 200, 60));
+        toDateBtn->setFont(font8);
+        toDateBtn->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
+"background-color: rgb(85, 170, 255);\n"
+"color: rgb(255, 255, 255);\n"
+""));
         stackedWidget->addWidget(adminMenu);
         begin_background_2->raise();
         begin_left_2->raise();
-        toDateBtn->raise();
         goTestBtn->raise();
         toHelpBtn->raise();
         label_6->raise();
         label_23->raise();
-        goTestBtn_2->raise();
+        goUserInfo->raise();
         line->raise();
         label_24->raise();
         run_2->raise();
         begin_right->raise();
-        label_25->raise();
-        label_26->raise();
-        textEdit->raise();
-        label_27->raise();
-        textEdit_2->raise();
-        label_28->raise();
-        textEdit_3->raise();
-        label_29->raise();
-        textEdit_4->raise();
-        label_30->raise();
-        textEdit_5->raise();
-        label_31->raise();
-        textEdit_6->raise();
-        label_32->raise();
-        label_33->raise();
-        textEdit_7->raise();
-        label_34->raise();
-        textEdit_8->raise();
-        label_35->raise();
-        textEdit_9->raise();
+        stackedWidget_3->raise();
+        toDateBtn->raise();
         helpPage = new QWidget();
         helpPage->setObjectName(QString::fromUtf8("helpPage"));
         label_9 = new QLabel(helpPage);
@@ -630,13 +910,13 @@ public:
         label_10 = new QLabel(introductionPage);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(810, 200, 291, 81));
-        QFont font10;
-        font10.setFamily(QString::fromUtf8("Adobe Devanagari"));
-        font10.setPointSize(20);
-        font10.setBold(false);
-        font10.setItalic(false);
-        font10.setWeight(9);
-        label_10->setFont(font10);
+        QFont font14;
+        font14.setFamily(QString::fromUtf8("Adobe Devanagari"));
+        font14.setPointSize(20);
+        font14.setBold(false);
+        font14.setItalic(false);
+        font14.setWeight(9);
+        label_10->setFont(font14);
         label_10->setStyleSheet(QString::fromUtf8("font: 75 20pt \"Adobe Devanagari\";"));
         returnMenu_2 = new QPushButton(introductionPage);
         returnMenu_2->setObjectName(QString::fromUtf8("returnMenu_2"));
@@ -652,10 +932,10 @@ public:
         textArea = new QTextBrowser(gratitudePage);
         textArea->setObjectName(QString::fromUtf8("textArea"));
         textArea->setGeometry(QRect(620, 80, 651, 311));
-        QFont font11;
-        font11.setFamily(QString::fromUtf8("Adobe Devanagari"));
-        font11.setPointSize(12);
-        textArea->setFont(font11);
+        QFont font15;
+        font15.setFamily(QString::fromUtf8("Adobe Devanagari"));
+        font15.setPointSize(12);
+        textArea->setFont(font15);
         stackedWidget->addWidget(gratitudePage);
         label_8 = new QLabel(centralwidget);
         label_8->setObjectName(QString::fromUtf8("label_8"));
@@ -692,7 +972,8 @@ public:
         retranslateUi(MainWindow);
 
         stackedWidget->setCurrentIndex(0);
-        stackedWidget_2->setCurrentIndex(1);
+        stackedWidget_2->setCurrentIndex(0);
+        stackedWidget_3->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -728,28 +1009,60 @@ public:
         label_4->setText(QCoreApplication::translate("MainWindow", "\351\202\256\347\256\261", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "\347\224\250\346\210\267\345\220\215", nullptr));
         confirmRegBtn->setText(QCoreApplication::translate("MainWindow", "\347\241\256\350\256\244", nullptr));
-        toDateBtn->setText(QCoreApplication::translate("MainWindow", "\346\225\260\346\215\256\345\257\274\345\207\272", nullptr));
         goTestBtn->setText(QCoreApplication::translate("MainWindow", "\350\277\233\345\205\245\346\265\213\350\257\225", nullptr));
         toHelpBtn->setText(QCoreApplication::translate("MainWindow", "\344\275\277\347\224\250\345\270\256\345\212\251", nullptr));
         begin_background_2->setText(QString());
         begin_left_2->setText(QString());
         label_6->setText(QCoreApplication::translate("MainWindow", "\350\277\220\345\212\250\345\221\230\350\256\244\347\237\245\345\212\237\350\203\275\346\265\213\350\257\225\345\271\263\345\217\260", nullptr));
         label_23->setText(QCoreApplication::translate("MainWindow", "Athlete cognitive function test platform", nullptr));
-        goTestBtn_2->setText(QCoreApplication::translate("MainWindow", "\347\224\250\346\210\267\344\270\255\345\277\203", nullptr));
+        goUserInfo->setText(QCoreApplication::translate("MainWindow", "\347\224\250\346\210\267\344\270\255\345\277\203", nullptr));
         label_24->setText(QCoreApplication::translate("MainWindow", "Athlete cognitive function test platform", nullptr));
         run_2->setText(QString());
         begin_right->setText(QString());
-        label_25->setText(QCoreApplication::translate("MainWindow", "\347\224\250\346\210\267\344\277\241\346\201\257", nullptr));
-        label_26->setText(QCoreApplication::translate("MainWindow", "\345\247\223\345\220\215\357\274\232", nullptr));
-        label_27->setText(QCoreApplication::translate("MainWindow", "\347\273\204\345\210\253\357\274\232", nullptr));
-        label_28->setText(QCoreApplication::translate("MainWindow", "\345\207\272\347\224\237\345\271\264\346\234\210\357\274\232", nullptr));
-        label_29->setText(QCoreApplication::translate("MainWindow", "\346\200\247\345\210\253\357\274\232", nullptr));
-        label_30->setText(QCoreApplication::translate("MainWindow", "\350\277\220\345\212\250\351\241\271\347\233\256\357\274\232", nullptr));
-        label_31->setText(QCoreApplication::translate("MainWindow", "\350\277\220\345\212\250\347\255\211\347\272\247\357\274\232", nullptr));
-        label_32->setText(QCoreApplication::translate("MainWindow", "\347\224\250\346\210\267\350\256\276\347\275\256", nullptr));
         label_33->setText(QCoreApplication::translate("MainWindow", "\346\227\247\345\257\206\347\240\201\357\274\232", nullptr));
-        label_34->setText(QCoreApplication::translate("MainWindow", "\346\226\260\345\257\206\347\240\201\357\274\232", nullptr));
+        label_30->setText(QCoreApplication::translate("MainWindow", "\350\277\220\345\212\250\351\241\271\347\233\256\357\274\232", nullptr));
+        label_26->setText(QCoreApplication::translate("MainWindow", "\345\247\223\345\220\215\357\274\232", nullptr));
         label_35->setText(QCoreApplication::translate("MainWindow", "\345\257\206\347\240\201\347\241\256\350\256\244\357\274\232", nullptr));
+        label_32->setText(QCoreApplication::translate("MainWindow", "\347\224\250\346\210\267\350\256\276\347\275\256", nullptr));
+        label_29->setText(QCoreApplication::translate("MainWindow", "\346\200\247\345\210\253\357\274\232", nullptr));
+        label_28->setText(QCoreApplication::translate("MainWindow", "\345\207\272\347\224\237\345\271\264\346\234\210\357\274\232", nullptr));
+        label_27->setText(QCoreApplication::translate("MainWindow", "\347\273\204\345\210\253\357\274\232", nullptr));
+        label_25->setText(QCoreApplication::translate("MainWindow", "\347\224\250\346\210\267\344\277\241\346\201\257", nullptr));
+        label_34->setText(QCoreApplication::translate("MainWindow", "\346\226\260\345\257\206\347\240\201\357\274\232", nullptr));
+        label_31->setText(QCoreApplication::translate("MainWindow", "\350\277\220\345\212\250\347\255\211\347\272\247\357\274\232", nullptr));
+        test1->setText(QCoreApplication::translate("MainWindow", "\350\277\220\345\212\250\351\241\271\347\233\256", nullptr));
+        test2->setText(QCoreApplication::translate("MainWindow", "\345\277\203\347\220\206\346\227\213\350\275\254\344\273\273\345\212\241", nullptr));
+        test1_2->setText(QCoreApplication::translate("MainWindow", "ANT\346\265\213\350\257\225", nullptr));
+        test2_2->setText(QCoreApplication::translate("MainWindow", "N-back\346\265\213\350\257\225", nullptr));
+        goUserInfo_2->setText(QCoreApplication::translate("MainWindow", "\345\274\200\345\247\213", nullptr));
+        test2_3->setText(QCoreApplication::translate("MainWindow", "\351\207\215\347\275\256", nullptr));
+        test1_3->setText(QCoreApplication::translate("MainWindow", "\346\263\250\346\204\217\350\275\254\346\215\242\344\273\273\345\212\241", nullptr));
+        test1_4->setText(QCoreApplication::translate("MainWindow", "TTC\346\265\213\350\257\225", nullptr));
+        test1_5->setText(QCoreApplication::translate("MainWindow", "ANT\346\265\213\350\257\225", nullptr));
+        test2_4->setText(QCoreApplication::translate("MainWindow", "\345\277\203\347\220\206\346\227\213\350\275\254\344\273\273\345\212\241", nullptr));
+        test2_5->setText(QCoreApplication::translate("MainWindow", "N-back\346\265\213\350\257\225", nullptr));
+        test1_6->setText(QCoreApplication::translate("MainWindow", "\346\263\250\346\204\217\350\275\254\346\215\242\344\273\273\345\212\241", nullptr));
+        test1_7->setText(QCoreApplication::translate("MainWindow", "Posner\346\265\213\350\257\225", nullptr));
+        test1_8->setText(QCoreApplication::translate("MainWindow", "\344\277\241\345\217\267\345\201\234\346\255\242\344\273\273\345\212\241", nullptr));
+        test2_6->setText(QCoreApplication::translate("MainWindow", "GNG\346\265\213\350\257\225", nullptr));
+        test2_7->setText(QCoreApplication::translate("MainWindow", "Stroop\344\273\273\345\212\241", nullptr));
+        test1_9->setText(QCoreApplication::translate("MainWindow", "Flanker\344\273\273\345\212\241", nullptr));
+        label_7->setText(QCoreApplication::translate("MainWindow", ">\346\216\250\350\215\220\346\265\213\350\257\225\347\273\204", nullptr));
+        label_36->setText(QCoreApplication::translate("MainWindow", "\350\277\220\345\212\250\351\241\271\347\233\256", nullptr));
+        label_37->setText(QCoreApplication::translate("MainWindow", ">\346\216\250\350\215\220\346\265\213\350\257\225\347\273\204", nullptr));
+        label_38->setText(QCoreApplication::translate("MainWindow", "\351\200\211\344\270\255\345\220\216\345\274\200\345\220\257\346\265\213\350\257\225", nullptr));
+        admininfo->setText(QCoreApplication::translate("MainWindow", "\347\256\241\347\220\206\350\200\205\344\277\241\346\201\257", nullptr));
+        testprogress->setText(QCoreApplication::translate("MainWindow", "\346\265\213\350\257\225\346\225\264\344\275\223\350\277\233\345\272\246", nullptr));
+        datalist->setText(QCoreApplication::translate("MainWindow", "\346\225\260\346\215\256\345\210\227\350\241\250", nullptr));
+        label_58->setText(QCoreApplication::translate("MainWindow", "\344\275\277\347\224\250\345\270\256\345\212\251", nullptr));
+        textArea_2->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Microsoft YaHei'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Adobe Devanagari','DejaVu Sans Mono';\">\346\234\254\351\241\271\347\233\256\347\224\261xx\351\241\271\347\233\256\347\273\204\345\256\214\346\210\220\357\274\214\346\204\237\350\260\242\346\202\250\347\232\204\344\275\277\347\224\250\343\200\202\346\255\244\345\244\226\357\274\214\347\224\261\350\241\267\345\270\214\346\234\233\345\276\227\345\210\260\346\202\250\345\234\250\344\275\277\347\224\250\344\270\255\347\232\204\346\265\213\350\257\225\346\225\260\346\215\256\357\274\214\345\256\236\347\216\260\346\225"
+                        "\260\346\215\256\345\205\261\344\272\253\357\274\214\345\246\202\346\234\211\347\226\221\351\227\256\357\274\214\345\217\257\350\201\224\347\263\273\351\241\271\347\233\256\347\273\204</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/logo1.png\" /></p></body></html>", nullptr));
+        toDateBtn->setText(QCoreApplication::translate("MainWindow", "\346\225\260\346\215\256\345\257\274\345\207\272", nullptr));
         label_9->setText(QCoreApplication::translate("MainWindow", "\344\275\277\347\224\250\345\270\256\345\212\251\344\277\241\346\201\257\347\225\214\351\235\242", nullptr));
         returnMenu_3->setText(QCoreApplication::translate("MainWindow", "\350\277\224\345\233\236", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "\350\275\257\344\273\266\344\273\213\347\273\215\347\225\214\351\235\242", nullptr));

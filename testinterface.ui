@@ -14,6 +14,12 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <widget class="Line" name="line">
     <property name="geometry">
      <rect>
@@ -49,7 +55,8 @@
     </property>
     <property name="styleSheet">
      <string notr="true">font-size:60px;
-color:black;</string>
+color:black;
+background-color: rgb(255, 255, 255,30%);</string>
     </property>
     <property name="text">
      <string>体育心理测试系统</string>
@@ -58,27 +65,19 @@ color:black;</string>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>-20</x>
+      <x>0</x>
       <y>90</y>
-      <width>1911</width>
-      <height>741</height>
+      <width>1924</width>
+      <height>801</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255,30%);</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
     <widget class="QWidget" name="menuPage">
-     <widget class="QGraphicsView" name="graphicsView_5">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>60</y>
-        <width>1121</width>
-        <height>651</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(218, 227, 243);
-border-radius:50px;</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="chooseExistTaskBtn">
       <property name="geometry">
        <rect>
@@ -95,6 +94,12 @@ border-radius:50px;</string>
         <weight>75</weight>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:30px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>选择已有测试项目</string>
@@ -117,6 +122,12 @@ border-radius:50px;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:30px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
+      </property>
       <property name="text">
        <string>新建测试项目</string>
       </property>
@@ -137,6 +148,12 @@ border-radius:50px;</string>
         <weight>75</weight>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:30px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>项目管理</string>
@@ -159,6 +176,12 @@ border-radius:50px;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:30px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
+      </property>
       <property name="text">
        <string>查看结果</string>
       </property>
@@ -175,7 +198,10 @@ border-radius:50px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 170, 0);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>N-back测试</string>
@@ -191,7 +217,10 @@ border-radius:50px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(190, 144, 255);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>信号停止任务</string>
@@ -207,7 +236,10 @@ border-radius:50px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 255, 255);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>心理旋转任务</string>
@@ -223,7 +255,10 @@ border-radius:50px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 80, 97);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>Stroop任务</string>
@@ -239,7 +274,10 @@ border-radius:50px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 170, 0);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>注意转换任务</string>
@@ -255,7 +293,10 @@ border-radius:50px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 201, 139);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>Posner测试</string>
@@ -271,7 +312,10 @@ border-radius:50px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(190, 144, 255);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>GNG测试</string>
@@ -329,7 +373,10 @@ border-radius:50px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 170, 0);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>ANT测试</string>
@@ -345,7 +392,10 @@ border-radius:50px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 80, 97);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>Flanker任务</string>
@@ -361,7 +411,10 @@ border-radius:50px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 170, 0);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>注意转换任务</string>
@@ -377,7 +430,10 @@ border-radius:50px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(71, 255, 139);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>运动项目</string>
@@ -406,7 +462,10 @@ border-radius:50px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 170, 0);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>N-back测试</string>
@@ -422,7 +481,10 @@ border-radius:50px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 170, 0);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>ANT测试</string>
@@ -441,7 +503,10 @@ border-radius:50px;</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'STIX2Text','Times New Roman','serif'; font-size:16px; font-weight:600; color:#333333; background-color:#ffffff;&quot;&gt;类别：&lt;/span&gt;&lt;span style=&quot; font-family:'STIX2Text','Times New Roman','serif'; font-size:16px; color:#333333; background-color:#ffffff;&quot;&gt;时间知觉&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'STIX2Text','Times New Roman','serif'; font-size:16px; font-weight:600; color:#333333; background-color:#ffffff;&quot;&gt;测试时长：&lt;/span&gt;&lt;span style=&quot; font-family:'STIX2Text','Times New Roman','serif'; font-size:16px; color:#333333; background-color:#ffffff;&quot;&gt; 10min&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 255, 255);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>心理旋转任务</string>
@@ -460,7 +525,10 @@ border-radius:50px;</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'STIX2Text','Times New Roman','serif'; font-size:16px; font-weight:600; color:#333333; background-color:#ffffff;&quot;&gt;类别：&lt;/span&gt;&lt;span style=&quot; font-family:'STIX2Text','Times New Roman','serif'; font-size:16px; color:#333333; background-color:#ffffff;&quot;&gt;时间知觉&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'STIX2Text','Times New Roman','serif'; font-size:16px; font-weight:600; color:#333333; background-color:#ffffff;&quot;&gt;测试时长：&lt;/span&gt;&lt;span style=&quot; font-family:'STIX2Text','Times New Roman','serif'; font-size:16px; color:#333333; background-color:#ffffff;&quot;&gt; 10min&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(71, 255, 139);</string>
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>TTC测试</string>
@@ -496,6 +564,12 @@ border-radius:50px;</string>
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
+      </property>
       <property name="text">
        <string>返回</string>
       </property>
@@ -508,6 +582,12 @@ border-radius:50px;</string>
         <width>91</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>开始</string>
@@ -586,6 +666,12 @@ item:{
         <height>61</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:20px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
+      </property>
       <property name="text">
        <string>开始测试</string>
       </property>
@@ -598,6 +684,12 @@ item:{
         <width>93</width>
         <height>28</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>返回</string>
@@ -676,6 +768,12 @@ item:{
         <height>41</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
+      </property>
       <property name="text">
        <string>删除</string>
       </property>
@@ -689,6 +787,12 @@ item:{
         <height>41</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
+      </property>
       <property name="text">
        <string>数据导出</string>
       </property>
@@ -701,6 +805,12 @@ item:{
         <width>93</width>
         <height>28</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>返回</string>
@@ -725,8 +835,9 @@ item:{
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
+       <string notr="true">border-radius:30px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
 </string>
       </property>
       <property name="text">
@@ -750,8 +861,9 @@ border-color: rgb(0, 85, 255);
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
+       <string notr="true">border-radius:30px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
 </string>
       </property>
       <property name="text">
@@ -779,7 +891,7 @@ border-color: rgb(0, 85, 255);
      <widget class="QPushButton" name="returnBegBtn1">
       <property name="geometry">
        <rect>
-        <x>1080</x>
+        <x>1060</x>
         <y>550</y>
         <width>111</width>
         <height>51</height>
@@ -793,8 +905,9 @@ border-color: rgb(0, 85, 255);
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
+       <string notr="true">border-radius:20px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
 </string>
       </property>
       <property name="text">
@@ -837,7 +950,7 @@ border-color: rgb(0, 85, 255);
      <widget class="QPushButton" name="confirmRegBtn">
       <property name="geometry">
        <rect>
-        <x>820</x>
+        <x>800</x>
         <y>550</y>
         <width>111</width>
         <height>51</height>
@@ -851,8 +964,9 @@ border-color: rgb(0, 85, 255);
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
+       <string notr="true">border-radius:20px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
 </string>
       </property>
       <property name="text">
@@ -910,28 +1024,6 @@ border-color: rgb(0, 85, 255);
       </property>
       <property name="text">
        <string>出生年月</string>
-      </property>
-     </widget>
-     <widget class="QGraphicsView" name="graphicsView_4">
-      <property name="geometry">
-       <rect>
-        <x>480</x>
-        <y>50</y>
-        <width>1000</width>
-        <height>600</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Adobe Devanagari</family>
-        <pointsize>20</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(218, 227, 243);
-border-radius:50px;</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_4">
@@ -1063,7 +1155,6 @@ border-radius:50px;</string>
        <string>&gt;创建档案&lt;</string>
       </property>
      </widget>
-     <zorder>graphicsView_4</zorder>
      <zorder>label_14</zorder>
      <zorder>label_11</zorder>
      <zorder>lineEdit_2</zorder>
@@ -1098,8 +1189,9 @@ border-radius:50px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
+       <string notr="true">border-radius:30px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
 </string>
       </property>
       <property name="text">
@@ -1230,8 +1322,9 @@ item
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
+       <string notr="true">border-radius:20px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
 </string>
       </property>
       <property name="text">
@@ -1292,28 +1385,6 @@ border-color: rgb(0, 85, 255);
        <string notr="true">font: 14pt &quot;Microsoft Sans Serif&quot;;</string>
       </property>
      </widget>
-     <widget class="QGraphicsView" name="graphicsView_6">
-      <property name="geometry">
-       <rect>
-        <x>540</x>
-        <y>70</y>
-        <width>891</width>
-        <height>551</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Adobe Devanagari</family>
-        <pointsize>20</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(218, 227, 243);
-border-radius:50px;</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="returnBegBtn">
       <property name="geometry">
        <rect>
@@ -1331,8 +1402,9 @@ border-radius:50px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;
-border-color: rgb(0, 85, 255);
+       <string notr="true">border-radius:20px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
 </string>
       </property>
       <property name="text">
@@ -1375,7 +1447,6 @@ border-color: rgb(0, 85, 255);
        <string>姓名</string>
       </property>
      </widget>
-     <zorder>graphicsView_6</zorder>
      <zorder>lineEdit_10</zorder>
      <zorder>lineEdit_11</zorder>
      <zorder>label_19</zorder>
@@ -1393,6 +1464,12 @@ border-color: rgb(0, 85, 255);
       <width>151</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:10px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
     </property>
     <property name="text">
      <string>返回主页</string>

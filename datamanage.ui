@@ -7,72 +7,32 @@
     <x>0</x>
     <y>0</y>
     <width>1925</width>
-    <height>890</height>
+    <height>926</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="Line" name="line">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>90</y>
-      <width>1921</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="returnHome">
-    <property name="geometry">
-     <rect>
-      <x>1710</x>
-      <y>59</y>
-      <width>151</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>返回主页</string>
-    </property>
-   </widget>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>99</y>
+      <y>0</y>
       <width>1911</width>
-      <height>741</height>
+      <height>901</height>
      </rect>
     </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
     <widget class="QWidget" name="menuPage_2">
-     <widget class="QGraphicsView" name="graphicsView_6">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>60</y>
-        <width>1121</width>
-        <height>651</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(218, 227, 243);
-border-radius:50px;</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="chooseExistTaskBtn_2">
       <property name="geometry">
        <rect>
-        <x>780</x>
-        <y>350</y>
-        <width>411</width>
+        <x>920</x>
+        <y>300</y>
+        <width>261</width>
         <height>71</height>
        </rect>
       </property>
@@ -83,6 +43,12 @@ border-radius:50px;</string>
         <weight>75</weight>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:30px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>测试整体进度</string>
@@ -91,9 +57,9 @@ border-radius:50px;</string>
      <widget class="QPushButton" name="createNewBtn_2">
       <property name="geometry">
        <rect>
-        <x>780</x>
+        <x>920</x>
         <y>190</y>
-        <width>411</width>
+        <width>261</width>
         <height>71</height>
        </rect>
       </property>
@@ -104,6 +70,12 @@ border-radius:50px;</string>
         <weight>75</weight>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:30px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>管理者信息</string>
@@ -112,9 +84,9 @@ border-radius:50px;</string>
      <widget class="QPushButton" name="manageTaskBtn_2">
       <property name="geometry">
        <rect>
-        <x>780</x>
-        <y>510</y>
-        <width>411</width>
+        <x>920</x>
+        <y>420</y>
+        <width>261</width>
         <height>71</height>
        </rect>
       </property>
@@ -126,37 +98,166 @@ border-radius:50px;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:30px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
+      </property>
       <property name="text">
        <string>数据列表</string>
       </property>
      </widget>
+     <widget class="QLabel" name="begin_background_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1181</width>
+        <height>901</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="returnHome">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>530</y>
+        <width>261</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:30px;
+background-color: rgb(170, 0, 127);
+color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>返回主页</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="begin_right">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>50</y>
+        <width>1921</width>
+        <height>846</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255, 45%);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>70</y>
+        <width>41</width>
+        <height>611</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>25</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string>运动员认知功能测试平台</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>820</y>
+        <width>651</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>830</y>
+        <width>271</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>8</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;
+color: grey;</string>
+      </property>
+      <property name="text">
+       <string>Athlete cognitive function test platform</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="run_2">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>710</y>
+        <width>241</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <zorder>begin_background_2</zorder>
+     <zorder>begin_right</zorder>
+     <zorder>chooseExistTaskBtn_2</zorder>
+     <zorder>createNewBtn_2</zorder>
+     <zorder>manageTaskBtn_2</zorder>
+     <zorder>returnHome</zorder>
+     <zorder>label_6</zorder>
+     <zorder>line</zorder>
+     <zorder>label_24</zorder>
+     <zorder>run_2</zorder>
     </widget>
     <widget class="QWidget" name="page"/>
-   </widget>
-   <widget class="QLabel" name="label_13">
-    <property name="geometry">
-     <rect>
-      <x>720</x>
-      <y>20</y>
-      <width>520</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>DejaVu Sans Mono</family>
-      <pointsize>-1</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font-size:60px;
-color:black;</string>
-    </property>
-    <property name="text">
-     <string>体育心理测试系统</string>
-    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
