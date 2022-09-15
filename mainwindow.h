@@ -95,8 +95,6 @@ private slots:
 
     void on_admininfo_clicked();
 
-    void on_testprogress_clicked();
-
     void on_datalist_clicked();
 
     void on_info_1_clicked();
@@ -143,6 +141,28 @@ private slots:
 
     void on_reset_clicked();
 
+    void on_filter1_clicked();
+
+    void on_filter2_clicked();
+
+    void on_filter3_clicked();
+
+    void on_filter4_clicked();
+
+    void on_filter5_clicked();
+
+    void on_filter6_clicked();
+
+    void on_filter7_clicked();
+
+    void on_filter8_clicked();
+
+    void on_filter9_clicked();
+
+    void on_filter10_clicked();
+
+    void on_filterreset_clicked();
+
 private:
     Ui::MainWindow *ui;
     UserMap map;
@@ -157,10 +177,12 @@ private:
     void readalltester();
     void writetester();
     void reset();
+    void filterreset();
     int testindex = 0;
     int checkedindex = 0;
     QString testerid[4];
     int exammap[10];
+    int filtermap[10];
 
 protected:
     void paintEvent(QPaintEvent *);

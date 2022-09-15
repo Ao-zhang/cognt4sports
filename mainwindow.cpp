@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     reset();
+    filterreset();
     testindex=0;
     checkedindex = 0;
     readuser();
@@ -46,6 +47,12 @@ MainWindow::~MainWindow()
 void MainWindow::reset(){
     for (int i=0;i<10;i++) {
         exammap[i]=0;
+    }
+}
+
+void MainWindow::filterreset(){
+    for (int i=0;i<10;i++) {
+        filtermap[i]=0;
     }
 }
 
@@ -413,11 +420,6 @@ void MainWindow::on_goUserInfo_4_clicked()
 void MainWindow::on_admininfo_clicked()
 {
     QMessageBox::information(NULL, "提示", "请查看文件夹\"./data/测试项目/管理员id\"");
-}
-
-void MainWindow::on_testprogress_clicked()
-{
-    QMessageBox::information(NULL, "提示", "请查看文件夹\"./data\"");
 }
 
 void MainWindow::on_datalist_clicked()
@@ -819,4 +821,176 @@ void MainWindow::on_reset_clicked()
     this->ui->test9->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
     this->ui->test10->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
 
+}
+
+void MainWindow::on_filter1_clicked()
+{
+    int click = 0;
+    if(filtermap[click]==0)
+    {
+        this->ui->filter1->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+        filtermap[click]=1;
+    }
+    else
+    {
+        this->ui->filter1->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        filtermap[click]=0;
+    }
+}
+
+void MainWindow::on_filter2_clicked()
+{
+    int click = 1;
+    if(filtermap[click]==0)
+    {
+        this->ui->filter2->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+        filtermap[click]=1;
+    }
+    else
+    {
+        this->ui->filter2->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        filtermap[click]=0;
+    }
+}
+
+void MainWindow::on_filter3_clicked()
+{
+    int click = 2;
+    if(filtermap[click]==0)
+    {
+        this->ui->filter3->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+        filtermap[click]=1;
+    }
+    else
+    {
+        this->ui->filter3->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        filtermap[click]=0;
+    }
+}
+
+void MainWindow::on_filter4_clicked()
+{
+    int click = 3;
+    if(filtermap[click]==0)
+    {
+        this->ui->filter4->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+        filtermap[click]=1;
+    }
+    else
+    {
+        this->ui->filter4->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        filtermap[click]=0;
+    }
+}
+
+void MainWindow::on_filter5_clicked()
+{
+    int click = 4;
+    if(filtermap[click]==0)
+    {
+        this->ui->filter5->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+        filtermap[click]=1;
+    }
+    else
+    {
+        this->ui->filter5->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        filtermap[click]=0;
+    }
+}
+
+void MainWindow::on_filter6_clicked()
+{
+    int click = 5;
+    if(filtermap[click]==0)
+    {
+        this->ui->filter6->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+        filtermap[click]=1;
+    }
+    else
+    {
+        this->ui->filter6->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        filtermap[click]=0;
+    }
+}
+
+void MainWindow::on_filter7_clicked()
+{
+    int click = 6;
+    if(filtermap[click]==0)
+    {
+        this->ui->filter7->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+        filtermap[click]=1;
+    }
+    else
+    {
+        this->ui->filter7->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        filtermap[click]=0;
+    }
+}
+
+void MainWindow::on_filter8_clicked()
+{
+    int click = 7;
+    if(filtermap[click]==0)
+    {
+        this->ui->filter8->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+        filtermap[click]=1;
+    }
+    else
+    {
+        this->ui->filter8->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        filtermap[click]=0;
+    }
+}
+
+void MainWindow::on_filter9_clicked()
+{
+    int click = 8;
+    if(filtermap[click]==0)
+    {
+        this->ui->filter9->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+        filtermap[click]=1;
+    }
+    else
+    {
+        this->ui->filter9->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        filtermap[click]=0;
+    }
+}
+
+void MainWindow::on_filter10_clicked()
+{
+    int click = 9;
+    if(filtermap[click]==0)
+    {
+        this->ui->filter10->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+        filtermap[click]=1;
+    }
+    else
+    {
+        this->ui->filter10->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        filtermap[click]=0;
+    }
+}
+
+void MainWindow::on_filterreset_clicked()
+{
+    filterreset();
+    this->ui->filter1->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->filter2->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->filter3->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->filter4->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->filter5->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->filter6->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->filter7->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->filter8->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->filter9->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+    this->ui->filter10->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+
+    this->ui->filterinfo1->setText("暂无搜索结果");
+    this->ui->filterinfo2->setText("");
+    this->ui->filterinfo3->setText("");
+    this->ui->filterinfo4->setText("");
+    this->ui->filterinfo5->setText("");
+    this->ui->filterinfo6->setText("");
 }
