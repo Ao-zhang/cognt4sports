@@ -1,0 +1,1 @@
+2022-09-12 23:56:05,671 - __main__ - INFO - flanker res:[0] 	accurate:0.0

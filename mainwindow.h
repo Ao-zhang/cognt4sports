@@ -8,6 +8,7 @@
 #include <testinterface.h>
 #include <datamanage.h>
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -24,7 +25,21 @@ private:
     QString email;
 };
 
+class Tester{
+public:
+    Tester(QString i,QString n,QString b,QString s,QString g,QString it,QString l):id(i),name(n),birth(b),sex(s),group(g),item(it),level(l){}
+
+    QString id;
+    QString name;
+    QString birth="";
+    QString sex="";
+    QString group="";
+    QString item="";
+    QString level="";
+};
+
 typedef QMap<QString, User> UserMap;
+typedef QMap<QString, Tester> TesterMap;
 
 class MainWindow : public QMainWindow
 {
@@ -84,15 +99,68 @@ private slots:
 
     void on_datalist_clicked();
 
+    void on_info_1_clicked();
+
+    void on_info_2_clicked();
+
+    void on_info_3_clicked();
+
+    void on_info_4_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_test1_30_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_test1_29_clicked();
+
+    void on_test1_28_clicked();
+
+    void on_test1_clicked();
+
+    void on_test2_clicked();
+
+    void on_test3_clicked();
+
+    void on_test4_clicked();
+
+    void on_test5_clicked();
+
+    void on_test6_clicked();
+
+    void on_test7_clicked();
+
+    void on_test8_clicked();
+
+    void on_test9_clicked();
+
+    void on_test10_clicked();
+
+    void on_reset_clicked();
+
 private:
     Ui::MainWindow *ui;
     UserMap map;
     TestInterface * testui;
     DataManage * dataui;
+    TesterMap tester;
     int agree = 0;
     void readuser();
     void writeuser(QString content);
     void init_img();
+    bool readtester(int index);
+    void readalltester();
+    void writetester();
+    void reset();
+    int testindex = 0;
+    int checkedindex = 0;
+    QString testerid[4];
+    int exammap[10];
 
 protected:
     void paintEvent(QPaintEvent *);
