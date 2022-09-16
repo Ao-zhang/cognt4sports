@@ -335,7 +335,7 @@
        <string notr="true">background-color: transparent;</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QPushButton" name="toRegisterBtn_2">

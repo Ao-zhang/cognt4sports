@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "QFileDialog"
 #include <QDebug>
 #include <QMessageBox>
 #include <shlobj.h>
@@ -48,12 +47,14 @@ void MainWindow::reset(){
     for (int i=0;i<10;i++) {
         exammap[i]=0;
     }
+
 }
 
 void MainWindow::filterreset(){
     for (int i=0;i<10;i++) {
         filtermap[i]=0;
     }
+    filterresult.clear();
 }
 
 void MainWindow::init_img()
@@ -417,15 +418,58 @@ void MainWindow::on_goUserInfo_4_clicked()
         emit toData();
 }
 
-void MainWindow::on_admininfo_clicked()
-{
-    QMessageBox::information(NULL, "提示", "请查看文件夹\"./data/测试项目/管理员id\"");
+bool MainWindow::readfilter(int index){
+    int i=0;
+    QFileInfoList::const_iterator iterator = filterresult.constBegin();
+        while (iterator != filterresult.constEnd() & (i<index*6)) {
+            ++iterator;
+            ++i;
+    }
+    QString data[6];
+    i=0;
+    while (iterator != filterresult.constEnd() & (i<6))
+    {
+        data[i]=iterator->fileName();
+        ++iterator;
+        ++i;
+    }
+
+    if(data[0]!="")
+    {
+        this->ui->filterinfo1->setText(data[0]);
+        this->ui->filterinfo2->setText(data[1]);
+        this->ui->filterinfo3->setText(data[2]);
+        this->ui->filterinfo4->setText(data[3]);
+        this->ui->filterinfo5->setText(data[4]);
+        this->ui->filterinfo6->setText(data[5]);
+        return true;
+    }
+    else
+        return false;
 }
 
-void MainWindow::on_datalist_clicked()
+void MainWindow::on_admininfo_clicked()
 {
-    QMessageBox::information(NULL, "提示", "请查看文件夹\"./data/测试项目/管理员id/测试者id/测试次数\"");
+    filterresult.clear();
+    if(filtermap[8])
+    {
+        QDir Qdir("./data/flanker/1/2");
+        QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+        filterresult.append(Qflist);
+    }
+    if(filtermap[9])
+    {
+        QDir Qdir("./data/stroop/1/2");
+        QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+        filterresult.append(Qflist);
+    }
+    if(!readfilter(0))
+    {
+        this->ui->filterinfo1->setText("暂无搜索结果");
+    }
+
 }
+
 
 void MainWindow::on_info_1_clicked()
 {
@@ -993,4 +1037,88 @@ void MainWindow::on_filterreset_clicked()
     this->ui->filterinfo4->setText("");
     this->ui->filterinfo5->setText("");
     this->ui->filterinfo6->setText("");
+
+    filterindex=0;
+    this->ui->label_44->setText("第 "+QString::number(filterindex+1)+" 页");
+}
+
+void MainWindow::on_filterinfo1_clicked()
+{
+    if(0+filterindex*6>filterresult.size()-1)
+        return;
+    QString path = filterresult[0+filterindex*6].absoluteFilePath();
+    QString cmd = "start "+path;
+    const char* a = cmd.toStdString().data();
+    system(a);
+}
+
+
+void MainWindow::on_filterinfo2_clicked()
+{
+    if(1+filterindex*6>filterresult.size()-1)
+        return;
+    QString path = filterresult[1+filterindex*6].absoluteFilePath();
+    QString cmd = "start "+path;
+    const char* a = cmd.toStdString().data();
+    system(a);
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+        if(filterindex>0)
+            filterindex--;
+        if(readfilter(filterindex))
+            this->ui->label_44->setText("第 "+QString::number(filterindex+1)+" 页");
+        else
+            filterindex++;
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+        filterindex++;
+        if(readfilter(filterindex))
+            this->ui->label_44->setText("第 "+QString::number(filterindex+1)+" 页");
+        else
+            filterindex--;
+
+}
+
+void MainWindow::on_filterinfo3_clicked()
+{
+    if(2+filterindex*6>filterresult.size()-1)
+        return;
+    QString path = filterresult[2+filterindex*6].absoluteFilePath();
+    QString cmd = "start "+path;
+    const char* a = cmd.toStdString().data();
+    system(a);
+}
+
+void MainWindow::on_filterinfo4_clicked()
+{
+    if(3+filterindex*6>filterresult.size()-1)
+        return;
+    QString path = filterresult[3+filterindex*6].absoluteFilePath();
+    QString cmd = "start "+path;
+    const char* a = cmd.toStdString().data();
+    system(a);
+}
+
+void MainWindow::on_filterinfo5_clicked()
+{
+    if(4+filterindex*6>filterresult.size()-1)
+        return;
+    QString path = filterresult[4+filterindex*6].absoluteFilePath();
+    QString cmd = "start "+path;
+    const char* a = cmd.toStdString().data();
+    system(a);
+}
+
+void MainWindow::on_filterinfo6_clicked()
+{
+    if(5+filterindex*6>filterresult.size()-1)
+        return;
+    QString path = filterresult[5+filterindex*6].absoluteFilePath();
+    QString cmd = "start "+path;
+    const char* a = cmd.toStdString().data();
+    system(a);
 }

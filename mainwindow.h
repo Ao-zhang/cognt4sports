@@ -7,6 +7,7 @@
 #include <qmap.h>
 #include <testinterface.h>
 #include <datamanage.h>
+#include "QFileDialog"
 
 
 QT_BEGIN_NAMESPACE
@@ -95,8 +96,6 @@ private slots:
 
     void on_admininfo_clicked();
 
-    void on_datalist_clicked();
-
     void on_info_1_clicked();
 
     void on_info_2_clicked();
@@ -163,6 +162,22 @@ private slots:
 
     void on_filterreset_clicked();
 
+    void on_filterinfo1_clicked();
+
+    void on_filterinfo2_clicked();
+
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_filterinfo3_clicked();
+
+    void on_filterinfo4_clicked();
+
+    void on_filterinfo5_clicked();
+
+    void on_filterinfo6_clicked();
+
 private:
     Ui::MainWindow *ui;
     UserMap map;
@@ -174,6 +189,7 @@ private:
     void writeuser(QString content);
     void init_img();
     bool readtester(int index);
+    bool readfilter(int index);
     void readalltester();
     void writetester();
     void reset();
@@ -183,6 +199,8 @@ private:
     QString testerid[4];
     int exammap[10];
     int filtermap[10];
+    QFileInfoList filterresult;
+    int filterindex = 0;
 
 protected:
     void paintEvent(QPaintEvent *);

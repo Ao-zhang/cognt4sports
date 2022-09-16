@@ -1290,7 +1290,7 @@ public:
         retranslateUi(MainWindow);
 
         stackedWidget->setCurrentIndex(1);
-        stackedWidget_2->setCurrentIndex(0);
+        stackedWidget_2->setCurrentIndex(1);
         stackedWidget_3->setCurrentIndex(2);
 
 
@@ -1388,7 +1388,7 @@ public:
         pushButton_5->setText(QCoreApplication::translate("MainWindow", "\344\270\213\344\270\200\351\241\265", nullptr));
         label_44->setText(QCoreApplication::translate("MainWindow", "\347\254\254 1 \351\241\265", nullptr));
         pushButton_6->setText(QCoreApplication::translate("MainWindow", "\344\270\212\344\270\200\351\241\265", nullptr));
-        filterinfo1->setText(QCoreApplication::translate("MainWindow", "\346\227\240", nullptr));
+        filterinfo1->setText(QCoreApplication::translate("MainWindow", "\346\232\202\346\227\240\346\220\234\347\264\242\347\273\223\346\236\234", nullptr));
         filterinfo2->setText(QString());
         filterinfo4->setText(QString());
         filterinfo3->setText(QString());
