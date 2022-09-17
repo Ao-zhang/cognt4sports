@@ -155,7 +155,7 @@ public:
     QPushButton *filter10;
     QTextBrowser *textBrowser;
     QTextBrowser *textBrowser_2;
-    QLineEdit *lineEdit_8;
+    QLineEdit *filtertext;
     QPushButton *filterbutton;
     QPushButton *pushButton_5;
     QLabel *label_44;
@@ -1047,10 +1047,10 @@ public:
         textBrowser_2->setGeometry(QRect(310, 130, 661, 601));
         textBrowser_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255,60%);\n"
 "border-radius: 30px;"));
-        lineEdit_8 = new QLineEdit(page_7);
-        lineEdit_8->setObjectName(QString::fromUtf8("lineEdit_8"));
-        lineEdit_8->setGeometry(QRect(350, 150, 331, 41));
-        lineEdit_8->setStyleSheet(QString::fromUtf8("border-radius:20px;\n"
+        filtertext = new QLineEdit(page_7);
+        filtertext->setObjectName(QString::fromUtf8("filtertext"));
+        filtertext->setGeometry(QRect(350, 150, 331, 41));
+        filtertext->setStyleSheet(QString::fromUtf8("border-radius:20px;\n"
 "background-color: rgb(255, 255, 255);"));
         filterbutton = new QPushButton(page_7);
         filterbutton->setObjectName(QString::fromUtf8("filterbutton"));
@@ -1122,7 +1122,7 @@ public:
         filter1->raise();
         filter10->raise();
         textBrowser_2->raise();
-        lineEdit_8->raise();
+        filtertext->raise();
         filterbutton->raise();
         pushButton_5->raise();
         label_44->raise();
@@ -1289,9 +1289,9 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
-        stackedWidget_2->setCurrentIndex(1);
-        stackedWidget_3->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(0);
+        stackedWidget_2->setCurrentIndex(0);
+        stackedWidget_3->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1383,7 +1383,7 @@ public:
         filter8->setText(QCoreApplication::translate("MainWindow", "\344\277\241\345\217\267\345\201\234\346\255\242\344\273\273\345\212\241", nullptr));
         filter1->setText(QCoreApplication::translate("MainWindow", "TTC\346\265\213\350\257\225", nullptr));
         filter10->setText(QCoreApplication::translate("MainWindow", "Stroop\344\273\273\345\212\241", nullptr));
-        lineEdit_8->setPlaceholderText(QCoreApplication::translate("MainWindow", " \350\276\223\345\205\245\347\274\226\345\217\267/\345\247\223\345\220\215/\346\200\247\345\210\253", nullptr));
+        filtertext->setPlaceholderText(QCoreApplication::translate("MainWindow", " \350\276\223\345\205\245\347\274\226\345\217\267/\345\247\223\345\220\215/\346\200\247\345\210\253", nullptr));
         filterbutton->setText(QCoreApplication::translate("MainWindow", "\347\255\233\351\200\211", nullptr));
         pushButton_5->setText(QCoreApplication::translate("MainWindow", "\344\270\213\344\270\200\351\241\265", nullptr));
         label_44->setText(QCoreApplication::translate("MainWindow", "\347\254\254 1 \351\241\265", nullptr));

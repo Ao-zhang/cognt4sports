@@ -178,6 +178,8 @@ private slots:
 
     void on_filterinfo6_clicked();
 
+    void on_filterbutton_clicked();
+
 private:
     Ui::MainWindow *ui;
     UserMap map;

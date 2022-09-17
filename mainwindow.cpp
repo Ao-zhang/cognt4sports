@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->page_3->installEventFilter(this);
     ui->page_4->installEventFilter(this);
     ui->stackedWidget->setCurrentIndex(0);
-    ui->stackedWidget->setCurrentIndex(1);
+//    ui->stackedWidget->setCurrentIndex(1);
     on_goUserInfo_clicked();
     testui=new TestInterface;
     testui->setWindowIcon(QIcon("./img/logo1.ico"));
@@ -408,8 +408,9 @@ void MainWindow::on_goUserInfo_clicked()
 
 void MainWindow::on_goUserInfo_2_clicked()
 {
-        this->hide();
-        emit toTest();
+//        this->hide();
+//        emit toTest();
+    system("start .\\tests.exe 1 2 1 flanker");
 }
 
 void MainWindow::on_goUserInfo_4_clicked()
@@ -453,19 +454,32 @@ void MainWindow::on_admininfo_clicked()
     filterresult.clear();
     if(filtermap[8])
     {
-        QDir Qdir("./data/flanker/1/2");
+        QDir Qdir("./data/flanker/1/1");
         QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
         filterresult.append(Qflist);
+
+        QDir Qdir2("./data/flanker/1/2");
+        QFileInfoList Qflist2=Qdir2.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+        filterresult.append(Qflist2);
     }
     if(filtermap[9])
     {
-        QDir Qdir("./data/stroop/1/2");
+        QDir Qdir("./data/stroop/1/1");
         QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
         filterresult.append(Qflist);
+
+        QDir Qdir2("./data/stroop/1/2");
+        QFileInfoList Qflist2=Qdir2.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+        filterresult.append(Qflist2);
     }
     if(!readfilter(0))
     {
         this->ui->filterinfo1->setText("暂无搜索结果");
+        this->ui->filterinfo2->setText("");
+        this->ui->filterinfo3->setText("");
+        this->ui->filterinfo4->setText("");
+        this->ui->filterinfo5->setText("");
+        this->ui->filterinfo6->setText("");
     }
 
 }
@@ -1121,4 +1135,52 @@ void MainWindow::on_filterinfo6_clicked()
     QString cmd = "start "+path;
     const char* a = cmd.toStdString().data();
     system(a);
+}
+
+void MainWindow::on_filterbutton_clicked()
+{
+    filterresult.clear();
+    if((this->ui->filtertext->text()=="1")||(this->ui->filtertext->text()=="tester1")||(this->ui->filtertext->text()=="女"))
+    {
+        if(filtermap[8])
+        {
+            QDir Qdir("./data/flanker/1/1");
+            QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+            filterresult.append(Qflist);
+        }
+
+        if(filtermap[9])
+        {
+        QDir Qdir2("./data/stroop/1/1");
+        QFileInfoList Qflist2=Qdir2.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+        filterresult.append(Qflist2);
+        }
+    }
+    if((this->ui->filtertext->text()=="2")||(this->ui->filtertext->text()=="tester2")||(this->ui->filtertext->text()=="男"))
+    {
+        if(filtermap[8])
+        {
+            QDir Qdir("./data/flanker/1/2");
+            QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+            filterresult.append(Qflist);
+        }
+
+        if(filtermap[9])
+        {
+        QDir Qdir2("./data/stroop/1/2");
+        QFileInfoList Qflist2=Qdir2.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+        filterresult.append(Qflist2);
+        }
+    }
+    if(this->ui->filtertext->text()=="")
+        on_admininfo_clicked();
+    if(!readfilter(0))
+    {
+        this->ui->filterinfo1->setText("暂无搜索结果");
+        this->ui->filterinfo2->setText("");
+        this->ui->filterinfo3->setText("");
+        this->ui->filterinfo4->setText("");
+        this->ui->filterinfo5->setText("");
+        this->ui->filterinfo6->setText("");
+    }
 }
