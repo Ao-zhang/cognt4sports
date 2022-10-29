@@ -1,0 +1,4 @@
+﻿name,type,canswer,practice.thisRepN,practice.thisTrialN,practice.thisN,practice.thisIndex,flanker_instruction.started,flanker_instruction.stopped,flanker_instruction_resp.keys,flanker_instruction_resp.rt,flanker_instruction_resp.started,flanker_instruction_resp.stopped,flanker_fix.started,flanker_fix.stopped,flanker_stimuli.started,flanker_stimuli.stopped,flanker_practice_resp.keys,flanker_practice_resp.corr,flanker_practice_resp.started,flanker_practice_resp.stopped,fb.started,fb.stopped,admin,participant,session,date,frameRate,
+,,,,,,,8.998816800012719,None,space,4.948324900004081,8.998816800012719,None,,,,,,,,,,,1,2,1,2022-09-12_23h55.54.503,60.55068425556547,
+FFLFF,不一致,l,0,0,0,3,,,,,,,14.02552920000744,None,14.487387500004843,None,None,0,14.487387500004843,None,15.488266300002579,None,1,2,1,2022-09-12_23h55.54.503,60.55068425556547,
+,,,,,,,,,,,,,16.489323700021487,None,,,,,,,,,,,,,,

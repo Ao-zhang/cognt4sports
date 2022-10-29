@@ -8,7 +8,8 @@
 #include <testinterface.h>
 #include <datamanage.h>
 #include "QFileDialog"
-
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -55,6 +56,8 @@ signals:
     void toData();
 
 private slots:
+
+    void finishedSlot(QNetworkReply*);
 
     void on_toRegisterBtn_clicked();
 
@@ -180,6 +183,14 @@ private slots:
 
     void on_filterbutton_clicked();
 
+    void on_filter10_3_clicked();
+
+    void on_filter10_4_clicked();
+
+    void on_filter10_5_clicked();
+
+    void on_filter10_6_clicked();
+
 private:
     Ui::MainWindow *ui;
     UserMap map;
@@ -187,6 +198,7 @@ private:
     DataManage * dataui;
     TesterMap tester;
     int agree = 0;
+    void closeEvent(QCloseEvent *e);
     void readuser();
     void writeuser(QString content);
     void init_img();
@@ -196,10 +208,11 @@ private:
     void writetester();
     void reset();
     void filterreset();
+    void initbackend();
     int testindex = 0;
     int checkedindex = 0;
     QString testerid[4];
-    int exammap[10];
+    int exammap;
     int filtermap[10];
     QFileInfoList filterresult;
     int filterindex = 0;

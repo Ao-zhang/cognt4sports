@@ -36,7 +36,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="begin">
      <widget class="QLabel" name="begin_background">
@@ -1090,7 +1090,7 @@ color: grey;</string>
        <string notr="true">background-color: transparent;</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="page_3">
        <widget class="QLabel" name="label_30">
@@ -2230,9 +2230,9 @@ border-radius:20px;</string>
        <widget class="QPushButton" name="admininfo">
         <property name="geometry">
          <rect>
-          <x>320</x>
+          <x>310</x>
           <y>40</y>
-          <width>151</width>
+          <width>121</width>
           <height>60</height>
          </rect>
         </property>
@@ -2256,9 +2256,9 @@ color: rgb(255, 255, 255);
        <widget class="QPushButton" name="filterreset">
         <property name="geometry">
          <rect>
-          <x>809</x>
+          <x>450</x>
           <y>40</y>
-          <width>151</width>
+          <width>111</width>
           <height>60</height>
          </rect>
         </property>
@@ -2822,6 +2822,136 @@ background-color: rgb(255, 255, 255);</string>
          <string/>
         </property>
        </widget>
+       <widget class="QPushButton" name="filter10_2">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>-750</y>
+          <width>171</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:20px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>Stroop任务</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="filter10_3">
+        <property name="geometry">
+         <rect>
+          <x>700</x>
+          <y>20</y>
+          <width>121</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:20px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>管理员导出</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="filter10_4">
+        <property name="geometry">
+         <rect>
+          <x>700</x>
+          <y>70</y>
+          <width>121</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:20px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>测试者导出</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="filter10_5">
+        <property name="geometry">
+         <rect>
+          <x>840</x>
+          <y>70</y>
+          <width>121</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:20px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>同组导出</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="filter10_6">
+        <property name="geometry">
+         <rect>
+          <x>840</x>
+          <y>20</y>
+          <width>121</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:20px;
+background-color: rgb(85, 170, 255);
+color: rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>测试导出</string>
+        </property>
+       </widget>
        <zorder>textBrowser</zorder>
        <zorder>admininfo</zorder>
        <zorder>filterreset</zorder>
@@ -2851,6 +2981,11 @@ background-color: rgb(255, 255, 255);</string>
        <zorder>filterinfo3</zorder>
        <zorder>filterinfo6</zorder>
        <zorder>filterinfo5</zorder>
+       <zorder>filter10_2</zorder>
+       <zorder>filter10_3</zorder>
+       <zorder>filter10_4</zorder>
+       <zorder>filter10_5</zorder>
+       <zorder>filter10_6</zorder>
       </widget>
       <widget class="QWidget" name="page_8">
        <widget class="QLabel" name="label_58">

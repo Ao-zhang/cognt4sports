@@ -1,0 +1,5 @@
+﻿name,type,canswer,practice.thisRepN,practice.thisTrialN,practice.thisN,practice.thisIndex,flanker_instruction.started,flanker_instruction.stopped,flanker_instruction_resp.keys,flanker_instruction_resp.rt,flanker_instruction_resp.started,flanker_instruction_resp.stopped,flanker_fix.started,flanker_fix.stopped,flanker_stimuli.started,flanker_stimuli.stopped,flanker_practice_resp.keys,flanker_practice_resp.corr,flanker_practice_resp.started,flanker_practice_resp.stopped,fb.started,fb.stopped,admin,participant,session,date,frameRate,
+,,,,,,,7.7755401999966125,None,space,1.4282434999986435,7.7755401999966125,None,,,,,,,,,,,1,1,1,2022-10-30_02h19.33.797,62.054140995343964,
+FFFFF,一致,f,0,0,0,2,,,,,,,9.450472399999853,None,9.78496869999799,None,None,0,9.78496869999799,None,10.735533099999884,None,1,1,1,2022-10-30_02h19.33.797,62.054140995343964,
+FFLFF,不一致,l,0,1,1,3,,,,,,,11.737117399999988,None,12.236074799999187,None,None,0,12.236074799999187,None,13.236509599999408,None,1,1,1,2022-10-30_02h19.33.797,62.054140995343964,
+,,,,,,,,,,,,,14.236652300001879,None,14.737083399995754,None,None,0,14.737083399995754,None,,,,,,,,

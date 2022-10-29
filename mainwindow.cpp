@@ -4,12 +4,14 @@
 #include <QMessageBox>
 #include <shlobj.h>
 #include <shellapi.h>
+#include <QInputDialog>
 
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    initbackend();
     reset();
     filterreset();
     testindex=0;
@@ -43,10 +45,74 @@ MainWindow::~MainWindow()
     delete testui;
 }
 
+void MainWindow::initbackend(){
+
+    system("start .\\python\\python.exe .\\backend.py");
+    system("start .\\python\\python.exe .\\utils.py");
+
+}
+
+void MainWindow::closeEvent(QCloseEvent *e)
+{
+        STARTUPINFO si;
+        PROCESS_INFORMATION pi;
+
+        ZeroMemory( &si, sizeof(si) );
+        si.cb = sizeof(si);
+        ZeroMemory( &pi, sizeof(pi) );
+
+        TCHAR szCommandLine[] = TEXT("TASKKILL /F /IM python.exe") ;
+
+        // Start the child process.
+        if( !CreateProcess( NULL,   // No module name (use command line)
+            szCommandLine,        // Command line
+            NULL,           // Process handle not inheritable
+            NULL,           // Thread handle not inheritable
+            FALSE,          // Set handle inheritance to FALSE
+            CREATE_NO_WINDOW,              // No creation flags
+            NULL,           // Use parent's environment block
+            NULL,           // Use parent's starting directory
+            &si,            // Pointer to STARTUPINFO structure
+            &pi )           // Pointer to PROCESS_INFORMATION structure
+        )
+        {
+            printf( "CreateProcess failed (%d).\n", GetLastError() );
+            return;
+        }
+
+        // Wait until child process exits.
+        WaitForSingleObject( pi.hProcess, INFINITE );
+
+        // Close process and thread handles.
+        CloseHandle( pi.hProcess );
+        CloseHandle( pi.hThread );
+
+}
+
+void MainWindow::finishedSlot(QNetworkReply *reply)
+{
+     if (reply->error() == QNetworkReply::NoError)
+     {
+         QByteArray bytes = reply->readAll();
+         qDebug() << bytes;
+         QMessageBox::information(this,
+                tr("数据已导出至该文件夹"),
+                tr(bytes),
+                QMessageBox::Ok,
+                QMessageBox::Ok);
+
+     }
+     else
+     {
+         qDebug() << "finishedSlot errors here";
+         qDebug( "found error .... code: %d\n", (int)reply->error());
+         qDebug(qPrintable(reply->errorString()));
+     }
+     reply->deleteLater();
+}
+
 void MainWindow::reset(){
-    for (int i=0;i<10;i++) {
-        exammap[i]=0;
-    }
+    exammap = -1;
 
 }
 
@@ -408,9 +474,21 @@ void MainWindow::on_goUserInfo_clicked()
 
 void MainWindow::on_goUserInfo_2_clicked()
 {
-//        this->hide();
-//        emit toTest();
-    system("start .\\tests.exe 1 2 1 flanker");
+    QNetworkAccessManager *accessManager = new QNetworkAccessManager(this);
+
+    QNetworkRequest request;
+
+    if(exammap == 7)
+    {
+        request.setUrl(QUrl("http://192.168.1.104:7777/flanker?admin=1&participant=1&session=1&group=1"));
+    }
+
+    if(exammap == 9)
+    {
+        request.setUrl(QUrl("http://192.168.1.104:7777/stroop?admin=1&participant=1&session=1&group=1"));
+    }
+
+    accessManager->get(request);
 }
 
 void MainWindow::on_goUserInfo_4_clicked()
@@ -717,151 +795,241 @@ void MainWindow::on_test1_28_clicked()
 
 void MainWindow::on_test1_clicked()
 {
-    int click = 0;
-    if(exammap[click]==0)
+    if(exammap!=0)
     {
+        this->ui->test1->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test2->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test3->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test4->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test5->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test6->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test7->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test8->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test9->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test10->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
         this->ui->test1->setStyleSheet("border-radius:30px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        exammap[click]=1;
+        exammap=0;
     }
     else
     {
+        exammap = -1;
         this->ui->test1->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        exammap[click]=0;
     }
 }
 
 void MainWindow::on_test2_clicked()
 {
-    int click = 1;
-    if(exammap[click]==0)
+    if(exammap!=1)
     {
+        this->ui->test1->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test2->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test3->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test4->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test5->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test6->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test7->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test8->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test9->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test10->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
         this->ui->test2->setStyleSheet("border-radius:30px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        exammap[click]=1;
+        exammap=1;
     }
     else
     {
+        exammap = -1;
         this->ui->test2->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        exammap[click]=0;
     }
 }
 
 void MainWindow::on_test3_clicked()
 {
-    int click = 2;
-    if(exammap[click]==0)
+    if(exammap!=2)
     {
+        this->ui->test1->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test2->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test3->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test4->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test5->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test6->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test7->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test8->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test9->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test10->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
         this->ui->test3->setStyleSheet("border-radius:30px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        exammap[click]=1;
+        exammap=2;
     }
     else
     {
+        exammap = -1;
         this->ui->test3->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        exammap[click]=0;
     }
 }
 
 void MainWindow::on_test4_clicked()
 {
-    int click = 3;
-    if(exammap[click]==0)
+    if(exammap!=3)
     {
+        this->ui->test1->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test2->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test3->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test4->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test5->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test6->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test7->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test8->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test9->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test10->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
         this->ui->test4->setStyleSheet("border-radius:30px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        exammap[click]=1;
+        exammap=3;
     }
     else
     {
+        exammap = -1;
         this->ui->test4->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        exammap[click]=0;
     }
 }
 
 void MainWindow::on_test5_clicked()
 {
-    int click = 4;
-    if(exammap[click]==0)
+    if(exammap!=4)
     {
+        this->ui->test1->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test2->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test3->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test4->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test5->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test6->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test7->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test8->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test9->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test10->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
         this->ui->test5->setStyleSheet("border-radius:30px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        exammap[click]=1;
+        exammap=4;
     }
     else
     {
+        exammap = -1;
         this->ui->test5->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        exammap[click]=0;
     }
 }
 
 void MainWindow::on_test6_clicked()
 {
-    int click = 5;
-    if(exammap[click]==0)
+    if(exammap!=5)
     {
+        this->ui->test1->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test2->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test3->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test4->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test5->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test6->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test7->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test8->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test9->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test10->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
         this->ui->test6->setStyleSheet("border-radius:30px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        exammap[click]=1;
+        exammap=5;
     }
     else
     {
+        exammap = -1;
         this->ui->test6->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        exammap[click]=0;
     }
 }
 
 void MainWindow::on_test7_clicked()
 {
-    int click = 6;
-    if(exammap[click]==0)
+    if(exammap!=6)
     {
+        this->ui->test1->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test2->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test3->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test4->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test5->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test6->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test7->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test8->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test9->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test10->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
         this->ui->test7->setStyleSheet("border-radius:30px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        exammap[click]=1;
+        exammap=6;
     }
     else
     {
+        exammap = -1;
         this->ui->test7->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        exammap[click]=0;
     }
 }
 
 void MainWindow::on_test8_clicked()
 {
-    int click = 7;
-    if(exammap[click]==0)
+    if(exammap!=7)
     {
+        this->ui->test1->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test2->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test3->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test4->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test5->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test6->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test7->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test8->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test9->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test10->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
         this->ui->test8->setStyleSheet("border-radius:30px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        exammap[click]=1;
+        exammap=7;
     }
     else
     {
+        exammap = -1;
         this->ui->test8->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        exammap[click]=0;
     }
 }
 
 void MainWindow::on_test9_clicked()
 {
-    int click = 8;
-    if(exammap[click]==0)
+    if(exammap!=8)
     {
+        this->ui->test1->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test2->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test3->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test4->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test5->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test6->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test7->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test8->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test9->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test10->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
         this->ui->test9->setStyleSheet("border-radius:30px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        exammap[click]=1;
+        exammap=8;
     }
     else
     {
+        exammap = -1;
         this->ui->test9->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        exammap[click]=0;
     }
 }
 
 void MainWindow::on_test10_clicked()
 {
-    int click = 9;
-    if(exammap[click]==0)
+    if(exammap!=9)
     {
+        this->ui->test1->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test2->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test3->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test4->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test5->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test6->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test7->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test8->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test9->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+        this->ui->test10->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
         this->ui->test10->setStyleSheet("border-radius:30px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        exammap[click]=1;
+        exammap=9;
     }
     else
     {
+        exammap = -1;
         this->ui->test10->setStyleSheet("border-radius:30px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        exammap[click]=0;
     }
 }
 
@@ -1183,4 +1351,85 @@ void MainWindow::on_filterbutton_clicked()
         this->ui->filterinfo5->setText("");
         this->ui->filterinfo6->setText("");
     }
+}
+
+void MainWindow::on_filter10_3_clicked()
+{
+    bool bOk = false;
+    QString sName = QInputDialog::getText(this,
+                                             "信息输入",
+                                             "请输入管理员信息",
+                                             QLineEdit::Normal,
+                                             "",
+                                             &bOk
+                                             );
+
+    QNetworkAccessManager *accessManager = new QNetworkAccessManager(this);
+
+    connect(accessManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(finishedSlot(QNetworkReply*)));
+
+    QNetworkRequest request;
+    request.setUrl(QUrl("http://localhost:7071/get/results/admin?admin="+sName));
+    accessManager->get(request);
+
+}
+
+void MainWindow::on_filter10_4_clicked()
+{
+    bool bOk = false;
+    QString sName = QInputDialog::getText(this,
+                                             "信息输入",
+                                             "请输入测试者信息",
+                                             QLineEdit::Normal,
+                                             "",
+                                             &bOk
+                                             );
+
+    QNetworkAccessManager *accessManager = new QNetworkAccessManager(this);
+
+    connect(accessManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(finishedSlot(QNetworkReply*)));
+
+    QNetworkRequest request;
+    request.setUrl(QUrl("http://localhost:7071/get/results/participant?admin=1&participant="+sName));
+    accessManager->get(request);
+}
+
+void MainWindow::on_filter10_5_clicked()
+{
+    bool bOk = false;
+    QString sName = QInputDialog::getText(this,
+                                             "信息输入",
+                                             "请输入分组信息",
+                                             QLineEdit::Normal,
+                                             "",
+                                             &bOk
+                                             );
+
+    QNetworkAccessManager *accessManager = new QNetworkAccessManager(this);
+
+    connect(accessManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(finishedSlot(QNetworkReply*)));
+
+    QNetworkRequest request;
+    request.setUrl(QUrl("http://localhost:7071/get/results/group?admin=1&group="+sName));
+    accessManager->get(request);
+}
+
+void MainWindow::on_filter10_6_clicked()
+{
+    bool bOk = false;
+    QString sName = QInputDialog::getText(this,
+                                             "信息输入",
+                                             "请输入测试信息",
+                                             QLineEdit::Normal,
+                                             "",
+                                             &bOk
+                                             );
+
+    QNetworkAccessManager *accessManager = new QNetworkAccessManager(this);
+
+    connect(accessManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(finishedSlot(QNetworkReply*)));
+
+    QNetworkRequest request;
+    request.setUrl(QUrl("http://localhost:7071/get/results/test?&test="+sName));
+    accessManager->get(request);
 }
