@@ -2227,36 +2227,10 @@ border-radius:20px;</string>
        <zorder>textEdit_17</zorder>
       </widget>
       <widget class="QWidget" name="page_7">
-       <widget class="QPushButton" name="admininfo">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>40</y>
-          <width>121</width>
-          <height>60</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>13</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-radius:30px;
-background-color: rgb(85, 170, 255);
-color: rgb(255, 255, 255);
-</string>
-        </property>
-        <property name="text">
-         <string>搜索</string>
-        </property>
-       </widget>
        <widget class="QPushButton" name="filterreset">
         <property name="geometry">
          <rect>
-          <x>450</x>
+          <x>340</x>
           <y>40</y>
           <width>111</width>
           <height>60</height>
@@ -2630,49 +2604,6 @@ border-radius: 30px;</string>
 border-radius: 30px;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="filtertext">
-        <property name="geometry">
-         <rect>
-          <x>350</x>
-          <y>150</y>
-          <width>331</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-radius:20px;
-background-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="placeholderText">
-         <string> 输入编号/姓名/性别</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="filterbutton">
-        <property name="geometry">
-         <rect>
-          <x>690</x>
-          <y>150</y>
-          <width>91</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-radius:20px;
-background-color: rgb(85, 170, 255);
-color: rgb(255, 255, 255);
-</string>
-        </property>
-        <property name="text">
-         <string>筛选</string>
-        </property>
-       </widget>
        <widget class="QPushButton" name="pushButton_5">
         <property name="geometry">
          <rect>
@@ -2851,8 +2782,8 @@ color: rgb(255, 255, 255);
        <widget class="QPushButton" name="filter10_3">
         <property name="geometry">
          <rect>
-          <x>700</x>
-          <y>20</y>
+          <x>340</x>
+          <y>150</y>
           <width>121</width>
           <height>41</height>
          </rect>
@@ -2877,8 +2808,8 @@ color: rgb(255, 255, 255);
        <widget class="QPushButton" name="filter10_4">
         <property name="geometry">
          <rect>
-          <x>700</x>
-          <y>70</y>
+          <x>500</x>
+          <y>150</y>
           <width>121</width>
           <height>41</height>
          </rect>
@@ -2903,8 +2834,8 @@ color: rgb(255, 255, 255);
        <widget class="QPushButton" name="filter10_5">
         <property name="geometry">
          <rect>
-          <x>840</x>
-          <y>70</y>
+          <x>820</x>
+          <y>150</y>
           <width>121</width>
           <height>41</height>
          </rect>
@@ -2929,8 +2860,8 @@ color: rgb(255, 255, 255);
        <widget class="QPushButton" name="filter10_6">
         <property name="geometry">
          <rect>
-          <x>840</x>
-          <y>20</y>
+          <x>660</x>
+          <y>150</y>
           <width>121</width>
           <height>41</height>
          </rect>
@@ -2953,7 +2884,6 @@ color: rgb(255, 255, 255);
         </property>
        </widget>
        <zorder>textBrowser</zorder>
-       <zorder>admininfo</zorder>
        <zorder>filterreset</zorder>
        <zorder>line_12</zorder>
        <zorder>line_13</zorder>
@@ -2970,8 +2900,6 @@ color: rgb(255, 255, 255);
        <zorder>filter1</zorder>
        <zorder>filter10</zorder>
        <zorder>textBrowser_2</zorder>
-       <zorder>filtertext</zorder>
-       <zorder>filterbutton</zorder>
        <zorder>pushButton_5</zorder>
        <zorder>label_44</zorder>
        <zorder>pushButton_6</zorder>

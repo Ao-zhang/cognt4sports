@@ -20,6 +20,7 @@ public:
     User(const QString n,QString p,QString c,QString e):name(n),password(p),company(c),email(e){}
 
     bool checkpassword(QString p){return password.compare(p)==0;}
+    QString getname(){return name;}
 private:
     QString name;
     QString password;
@@ -97,7 +98,7 @@ private slots:
 
     void on_goUserInfo_4_clicked();
 
-    void on_admininfo_clicked();
+//    void on_admininfo_clicked();
 
     void on_info_1_clicked();
 
@@ -181,7 +182,7 @@ private slots:
 
     void on_filterinfo6_clicked();
 
-    void on_filterbutton_clicked();
+//    void on_filterbutton_clicked();
 
     void on_filter10_3_clicked();
 
@@ -216,6 +217,8 @@ private:
     int filtermap[10];
     QFileInfoList filterresult;
     int filterindex = 0;
+    User* currentuser;
+    Tester* currenttester;
 
 protected:
     void paintEvent(QPaintEvent *);

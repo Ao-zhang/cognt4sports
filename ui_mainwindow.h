@@ -137,7 +137,6 @@ public:
     QLabel *label_43;
     QTextEdit *textEdit_17;
     QWidget *page_7;
-    QPushButton *admininfo;
     QPushButton *filterreset;
     QFrame *line_12;
     QFrame *line_13;
@@ -155,8 +154,6 @@ public:
     QPushButton *filter10;
     QTextBrowser *textBrowser;
     QTextBrowser *textBrowser_2;
-    QLineEdit *filtertext;
-    QPushButton *filterbutton;
     QPushButton *pushButton_5;
     QLabel *label_44;
     QPushButton *pushButton_6;
@@ -922,17 +919,9 @@ public:
         textEdit_17->raise();
         page_7 = new QWidget();
         page_7->setObjectName(QString::fromUtf8("page_7"));
-        admininfo = new QPushButton(page_7);
-        admininfo->setObjectName(QString::fromUtf8("admininfo"));
-        admininfo->setGeometry(QRect(310, 40, 121, 60));
-        admininfo->setFont(font8);
-        admininfo->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
-"background-color: rgb(85, 170, 255);\n"
-"color: rgb(255, 255, 255);\n"
-""));
         filterreset = new QPushButton(page_7);
         filterreset->setObjectName(QString::fromUtf8("filterreset"));
-        filterreset->setGeometry(QRect(450, 40, 111, 60));
+        filterreset->setGeometry(QRect(340, 40, 111, 60));
         filterreset->setFont(font8);
         filterreset->setStyleSheet(QString::fromUtf8("border-radius:30px;\n"
 "background-color: rgb(85, 170, 255);\n"
@@ -1052,19 +1041,6 @@ public:
         textBrowser_2->setGeometry(QRect(310, 130, 661, 601));
         textBrowser_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255,60%);\n"
 "border-radius: 30px;"));
-        filtertext = new QLineEdit(page_7);
-        filtertext->setObjectName(QString::fromUtf8("filtertext"));
-        filtertext->setGeometry(QRect(350, 150, 331, 41));
-        filtertext->setStyleSheet(QString::fromUtf8("border-radius:20px;\n"
-"background-color: rgb(255, 255, 255);"));
-        filterbutton = new QPushButton(page_7);
-        filterbutton->setObjectName(QString::fromUtf8("filterbutton"));
-        filterbutton->setGeometry(QRect(690, 150, 91, 41));
-        filterbutton->setFont(font15);
-        filterbutton->setStyleSheet(QString::fromUtf8("border-radius:20px;\n"
-"background-color: rgb(85, 170, 255);\n"
-"color: rgb(255, 255, 255);\n"
-""));
         pushButton_5 = new QPushButton(page_7);
         pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
         pushButton_5->setGeometry(QRect(670, 680, 93, 28));
@@ -1118,7 +1094,7 @@ public:
 ""));
         filter10_3 = new QPushButton(page_7);
         filter10_3->setObjectName(QString::fromUtf8("filter10_3"));
-        filter10_3->setGeometry(QRect(700, 20, 121, 41));
+        filter10_3->setGeometry(QRect(340, 150, 121, 41));
         filter10_3->setFont(font15);
         filter10_3->setStyleSheet(QString::fromUtf8("border-radius:20px;\n"
 "background-color: rgb(85, 170, 255);\n"
@@ -1126,7 +1102,7 @@ public:
 ""));
         filter10_4 = new QPushButton(page_7);
         filter10_4->setObjectName(QString::fromUtf8("filter10_4"));
-        filter10_4->setGeometry(QRect(700, 70, 121, 41));
+        filter10_4->setGeometry(QRect(500, 150, 121, 41));
         filter10_4->setFont(font15);
         filter10_4->setStyleSheet(QString::fromUtf8("border-radius:20px;\n"
 "background-color: rgb(85, 170, 255);\n"
@@ -1134,7 +1110,7 @@ public:
 ""));
         filter10_5 = new QPushButton(page_7);
         filter10_5->setObjectName(QString::fromUtf8("filter10_5"));
-        filter10_5->setGeometry(QRect(840, 70, 121, 41));
+        filter10_5->setGeometry(QRect(820, 150, 121, 41));
         filter10_5->setFont(font15);
         filter10_5->setStyleSheet(QString::fromUtf8("border-radius:20px;\n"
 "background-color: rgb(85, 170, 255);\n"
@@ -1142,7 +1118,7 @@ public:
 ""));
         filter10_6 = new QPushButton(page_7);
         filter10_6->setObjectName(QString::fromUtf8("filter10_6"));
-        filter10_6->setGeometry(QRect(840, 20, 121, 41));
+        filter10_6->setGeometry(QRect(660, 150, 121, 41));
         filter10_6->setFont(font15);
         filter10_6->setStyleSheet(QString::fromUtf8("border-radius:20px;\n"
 "background-color: rgb(85, 170, 255);\n"
@@ -1150,7 +1126,6 @@ public:
 ""));
         stackedWidget_3->addWidget(page_7);
         textBrowser->raise();
-        admininfo->raise();
         filterreset->raise();
         line_12->raise();
         line_13->raise();
@@ -1167,8 +1142,6 @@ public:
         filter1->raise();
         filter10->raise();
         textBrowser_2->raise();
-        filtertext->raise();
-        filterbutton->raise();
         pushButton_5->raise();
         label_44->raise();
         pushButton_6->raise();
@@ -1420,7 +1393,6 @@ public:
         label_41->setText(QCoreApplication::translate("MainWindow", "\345\247\223\345\220\215", nullptr));
         label_42->setText(QCoreApplication::translate("MainWindow", "\345\207\272\347\224\237\345\271\264\346\234\210", nullptr));
         label_43->setText(QCoreApplication::translate("MainWindow", "\346\200\247\345\210\253", nullptr));
-        admininfo->setText(QCoreApplication::translate("MainWindow", "\346\220\234\347\264\242", nullptr));
         filterreset->setText(QCoreApplication::translate("MainWindow", "\351\207\215\347\275\256", nullptr));
         label_9->setText(QCoreApplication::translate("MainWindow", ">\351\241\271\347\233\256\345\210\227\350\241\250", nullptr));
         filter2->setText(QCoreApplication::translate("MainWindow", "\345\277\203\347\220\206\346\227\213\350\275\254\344\273\273\345\212\241", nullptr));
@@ -1433,8 +1405,6 @@ public:
         filter8->setText(QCoreApplication::translate("MainWindow", "\344\277\241\345\217\267\345\201\234\346\255\242\344\273\273\345\212\241", nullptr));
         filter1->setText(QCoreApplication::translate("MainWindow", "TTC\346\265\213\350\257\225", nullptr));
         filter10->setText(QCoreApplication::translate("MainWindow", "Stroop\344\273\273\345\212\241", nullptr));
-        filtertext->setPlaceholderText(QCoreApplication::translate("MainWindow", " \350\276\223\345\205\245\347\274\226\345\217\267/\345\247\223\345\220\215/\346\200\247\345\210\253", nullptr));
-        filterbutton->setText(QCoreApplication::translate("MainWindow", "\347\255\233\351\200\211", nullptr));
         pushButton_5->setText(QCoreApplication::translate("MainWindow", "\344\270\213\344\270\200\351\241\265", nullptr));
         label_44->setText(QCoreApplication::translate("MainWindow", "\347\254\254 1 \351\241\265", nullptr));
         pushButton_6->setText(QCoreApplication::translate("MainWindow", "\344\270\212\344\270\200\351\241\265", nullptr));

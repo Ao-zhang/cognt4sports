@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     initbackend();
     reset();
-    filterreset();
+//    filterreset();
     testindex=0;
     checkedindex = 0;
     readuser();
@@ -116,12 +116,12 @@ void MainWindow::reset(){
 
 }
 
-void MainWindow::filterreset(){
-    for (int i=0;i<10;i++) {
-        filtermap[i]=0;
-    }
-    filterresult.clear();
-}
+//void MainWindow::filterreset(){
+////    for (int i=0;i<10;i++) {
+////        filtermap[i]=0;
+////    }
+//    filterresult.clear();
+//}
 
 void MainWindow::init_img()
 {
@@ -285,9 +285,10 @@ void MainWindow::on_confirmLoginBtn_clicked()
 
     if(map.contains(name))
     {
-        qDebug()<<name;
-        qDebug()<<password;
+//        qDebug()<<name;
+//        qDebug()<<password;
         QMap<QString,User>::iterator it = map.find(name);
+        currentuser = &it.value();
         if(it.value().checkpassword(password))
         {
             QMessageBox::information(NULL, "登录成功", "登录成功");
@@ -478,14 +479,43 @@ void MainWindow::on_goUserInfo_2_clicked()
 
     QNetworkRequest request;
 
-    if(exammap == 7)
-    {
-        request.setUrl(QUrl("http://192.168.1.104:7777/flanker?admin=1&participant=1&session=1&group=1"));
-    }
+    qDebug() << "current user: "<<currentuser->getname();
+    qDebug() << "current tester: "<<currenttester->name;
+    qDebug() << "current tester group: "<<currenttester->group;
 
-    if(exammap == 9)
-    {
-        request.setUrl(QUrl("http://192.168.1.104:7777/stroop?admin=1&participant=1&session=1&group=1"));
+    QString param = "admin="+currentuser->getname()+"&participant="+currenttester->name+"&session=1&group="+currenttester->group;
+
+    switch(exammap){
+    case 0:
+            request.setUrl(QUrl("http://localhost:7777/TTC?"+param));
+            break;
+    case 1:
+            request.setUrl(QUrl("http://localhost:7777/posner?"+param));
+            break;
+    case 2:
+            request.setUrl(QUrl("http://localhost:7777/mental?"+param));
+            break;
+    case 3:
+            request.setUrl(QUrl("http://localhost:7777/go_nogo?"+param));
+            break;
+    case 4:
+            request.setUrl(QUrl("http://localhost:7777/ant?"+param));
+            break;
+    case 5:
+            request.setUrl(QUrl("http://localhost:7777/stopSignal?"+param));
+            break;
+    case 6:
+            request.setUrl(QUrl("http://localhost:7777/moreOdd?"+param));
+            break;
+    case 7:
+            request.setUrl(QUrl("http://localhost:7777/flanker?"+param));
+            break;
+    case 8:
+            request.setUrl(QUrl("http://localhost:7777/twoBack?"+param));
+            break;
+    case 9:
+            request.setUrl(QUrl("http://localhost:7777/stroop?"+param));
+            break;
     }
 
     accessManager->get(request);
@@ -527,40 +557,42 @@ bool MainWindow::readfilter(int index){
         return false;
 }
 
-void MainWindow::on_admininfo_clicked()
-{
-    filterresult.clear();
-    if(filtermap[8])
-    {
-        QDir Qdir("./data/flanker/1/1");
-        QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
-        filterresult.append(Qflist);
+//void MainWindow::on_admininfo_clicked()
+//{
+////    filterresult.clear();
 
-        QDir Qdir2("./data/flanker/1/2");
-        QFileInfoList Qflist2=Qdir2.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
-        filterresult.append(Qflist2);
-    }
-    if(filtermap[9])
-    {
-        QDir Qdir("./data/stroop/1/1");
-        QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
-        filterresult.append(Qflist);
+////    if(filtermap[8])
+////    {
+////        QDir Qdir("./data/flanker/1/1");
+////        QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+////        filterresult.append(Qflist);
 
-        QDir Qdir2("./data/stroop/1/2");
-        QFileInfoList Qflist2=Qdir2.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
-        filterresult.append(Qflist2);
-    }
-    if(!readfilter(0))
-    {
-        this->ui->filterinfo1->setText("暂无搜索结果");
-        this->ui->filterinfo2->setText("");
-        this->ui->filterinfo3->setText("");
-        this->ui->filterinfo4->setText("");
-        this->ui->filterinfo5->setText("");
-        this->ui->filterinfo6->setText("");
-    }
+////        QDir Qdir2("./data/flanker/1/2");
+////        QFileInfoList Qflist2=Qdir2.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+////        filterresult.append(Qflist2);
+////    }
+////    if(filtermap[9])
+////    {
+////        QDir Qdir("./data/stroop/1/1");
+////        QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+////        filterresult.append(Qflist);
 
-}
+////        QDir Qdir2("./data/stroop/1/2");
+////        QFileInfoList Qflist2=Qdir2.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+////        filterresult.append(Qflist2);
+////    }
+
+////    if(!readfilter(0))
+////    {
+////        this->ui->filterinfo1->setText("暂无搜索结果");
+////        this->ui->filterinfo2->setText("");
+////        this->ui->filterinfo3->setText("");
+////        this->ui->filterinfo4->setText("");
+////        this->ui->filterinfo5->setText("");
+////        this->ui->filterinfo6->setText("");
+////    }
+
+//}
 
 
 void MainWindow::on_info_1_clicked()
@@ -583,6 +615,7 @@ void MainWindow::on_info_1_clicked()
         }
         else
         {
+            currenttester = &it.value();
             this->ui->info_1->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127, 60%);color: rgb(0, 0, 0);");
             this->ui->info_2->setStyleSheet("border-radius:20px;background-color: rgb(255, 255, 255, 60%);color: rgb(0, 0, 0);");
             this->ui->info_3->setStyleSheet("border-radius:20px;background-color: rgb(255, 255, 255, 60%);color: rgb(0, 0, 0);");
@@ -611,6 +644,7 @@ void MainWindow::on_info_2_clicked()
         }
         else
         {
+            currenttester = &it.value();
             this->ui->info_2->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127, 60%);color: rgb(0, 0, 0);");
             this->ui->info_1->setStyleSheet("border-radius:20px;background-color: rgb(255, 255, 255, 60%);color: rgb(0, 0, 0);");
             this->ui->info_3->setStyleSheet("border-radius:20px;background-color: rgb(255, 255, 255, 60%);color: rgb(0, 0, 0);");
@@ -642,6 +676,7 @@ void MainWindow::on_info_3_clicked()
         }
         else
         {
+            currenttester = &it.value();
             this->ui->info_3->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127, 60%);color: rgb(0, 0, 0);");
             this->ui->info_2->setStyleSheet("border-radius:20px;background-color: rgb(255, 255, 255, 60%);color: rgb(0, 0, 0);");
             this->ui->info_1->setStyleSheet("border-radius:20px;background-color: rgb(255, 255, 255, 60%);color: rgb(0, 0, 0);");
@@ -672,6 +707,7 @@ void MainWindow::on_info_4_clicked()
         }
         else
         {
+            currenttester = &it.value();
             this->ui->info_4->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127, 60%);color: rgb(0, 0, 0);");
             this->ui->info_2->setStyleSheet("border-radius:20px;background-color: rgb(255, 255, 255, 60%);color: rgb(0, 0, 0);");
             this->ui->info_3->setStyleSheet("border-radius:20px;background-color: rgb(255, 255, 255, 60%);color: rgb(0, 0, 0);");
@@ -1051,167 +1087,292 @@ void MainWindow::on_reset_clicked()
 
 void MainWindow::on_filter1_clicked()
 {
-    int click = 0;
-    if(filtermap[click]==0)
+//    int click = 0;
+//    if(filtermap[click]==0)
+//    {
+//        this->ui->filter1->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
+//        filtermap[click]=1;
+//    }
+//    else
+//    {
+//        this->ui->filter1->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+//        filtermap[click]=0;
+//    }
+
+    QString base = "./data/TTC/"+currentuser->getname();
+
+    QString filePath = QFileDialog::getExistingDirectory(this, "请选择数据文件夹", base);
+
+    if(filePath=="")
+        return;
+
+    QDir Qdir(filePath);
+
+    QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+
+    filterresult.append(Qflist);
+
+    if(!readfilter(0))
     {
-        this->ui->filter1->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        filtermap[click]=1;
+        this->ui->filterinfo1->setText("暂无搜索结果");
+        this->ui->filterinfo2->setText("");
+        this->ui->filterinfo3->setText("");
+        this->ui->filterinfo4->setText("");
+        this->ui->filterinfo5->setText("");
+        this->ui->filterinfo6->setText("");
     }
-    else
-    {
-        this->ui->filter1->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        filtermap[click]=0;
-    }
+
 }
 
 void MainWindow::on_filter2_clicked()
 {
-    int click = 1;
-    if(filtermap[click]==0)
+    QString base = "./data/mental/"+currentuser->getname();
+
+    QString filePath = QFileDialog::getExistingDirectory(this, "请选择数据文件夹", base);
+
+    if(filePath=="")
+        return;
+
+    QDir Qdir(filePath);
+
+    QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+
+    filterresult.append(Qflist);
+
+    if(!readfilter(0))
     {
-        this->ui->filter2->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        filtermap[click]=1;
-    }
-    else
-    {
-        this->ui->filter2->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        filtermap[click]=0;
+        this->ui->filterinfo1->setText("暂无搜索结果");
+        this->ui->filterinfo2->setText("");
+        this->ui->filterinfo3->setText("");
+        this->ui->filterinfo4->setText("");
+        this->ui->filterinfo5->setText("");
+        this->ui->filterinfo6->setText("");
     }
 }
 
 void MainWindow::on_filter3_clicked()
 {
-    int click = 2;
-    if(filtermap[click]==0)
+    QString base = "./data/ANT/"+currentuser->getname();
+
+    QString filePath = QFileDialog::getExistingDirectory(this, "请选择数据文件夹", base);
+
+    if(filePath=="")
+        return;
+
+    QDir Qdir(filePath);
+
+    QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+
+    filterresult.append(Qflist);
+
+    if(!readfilter(0))
     {
-        this->ui->filter3->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        filtermap[click]=1;
-    }
-    else
-    {
-        this->ui->filter3->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        filtermap[click]=0;
+        this->ui->filterinfo1->setText("暂无搜索结果");
+        this->ui->filterinfo2->setText("");
+        this->ui->filterinfo3->setText("");
+        this->ui->filterinfo4->setText("");
+        this->ui->filterinfo5->setText("");
+        this->ui->filterinfo6->setText("");
     }
 }
 
 void MainWindow::on_filter4_clicked()
 {
-    int click = 3;
-    if(filtermap[click]==0)
+    QString base = "./data/moreOdd/"+currentuser->getname();
+
+    QString filePath = QFileDialog::getExistingDirectory(this, "请选择数据文件夹", base);
+
+    if(filePath=="")
+        return;
+
+    QDir Qdir(filePath);
+
+    QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+
+    filterresult.append(Qflist);
+
+    if(!readfilter(0))
     {
-        this->ui->filter4->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        filtermap[click]=1;
-    }
-    else
-    {
-        this->ui->filter4->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        filtermap[click]=0;
+        this->ui->filterinfo1->setText("暂无搜索结果");
+        this->ui->filterinfo2->setText("");
+        this->ui->filterinfo3->setText("");
+        this->ui->filterinfo4->setText("");
+        this->ui->filterinfo5->setText("");
+        this->ui->filterinfo6->setText("");
     }
 }
 
 void MainWindow::on_filter5_clicked()
 {
-    int click = 4;
-    if(filtermap[click]==0)
+    QString base = "./data/2_back/"+currentuser->getname();
+
+    QString filePath = QFileDialog::getExistingDirectory(this, "请选择数据文件夹", base);
+
+    if(filePath=="")
+        return;
+
+    QDir Qdir(filePath);
+
+    QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+
+    filterresult.append(Qflist);
+
+    if(!readfilter(0))
     {
-        this->ui->filter5->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        filtermap[click]=1;
-    }
-    else
-    {
-        this->ui->filter5->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        filtermap[click]=0;
+        this->ui->filterinfo1->setText("暂无搜索结果");
+        this->ui->filterinfo2->setText("");
+        this->ui->filterinfo3->setText("");
+        this->ui->filterinfo4->setText("");
+        this->ui->filterinfo5->setText("");
+        this->ui->filterinfo6->setText("");
     }
 }
 
 void MainWindow::on_filter6_clicked()
 {
-    int click = 5;
-    if(filtermap[click]==0)
+    QString base = "./data/posner/"+currentuser->getname();
+
+    QString filePath = QFileDialog::getExistingDirectory(this, "请选择数据文件夹", base);
+
+    if(filePath=="")
+        return;
+
+    QDir Qdir(filePath);
+
+    QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+
+    filterresult.append(Qflist);
+
+    if(!readfilter(0))
     {
-        this->ui->filter6->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        filtermap[click]=1;
-    }
-    else
-    {
-        this->ui->filter6->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        filtermap[click]=0;
+        this->ui->filterinfo1->setText("暂无搜索结果");
+        this->ui->filterinfo2->setText("");
+        this->ui->filterinfo3->setText("");
+        this->ui->filterinfo4->setText("");
+        this->ui->filterinfo5->setText("");
+        this->ui->filterinfo6->setText("");
     }
 }
 
 void MainWindow::on_filter7_clicked()
 {
-    int click = 6;
-    if(filtermap[click]==0)
+    QString base = "./data/go_nogo/"+currentuser->getname();
+
+    QString filePath = QFileDialog::getExistingDirectory(this, "请选择数据文件夹", base);
+
+    if(filePath=="")
+        return;
+
+    QDir Qdir(filePath);
+
+    QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+
+    filterresult.append(Qflist);
+
+    if(!readfilter(0))
     {
-        this->ui->filter7->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        filtermap[click]=1;
-    }
-    else
-    {
-        this->ui->filter7->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        filtermap[click]=0;
+        this->ui->filterinfo1->setText("暂无搜索结果");
+        this->ui->filterinfo2->setText("");
+        this->ui->filterinfo3->setText("");
+        this->ui->filterinfo4->setText("");
+        this->ui->filterinfo5->setText("");
+        this->ui->filterinfo6->setText("");
     }
 }
 
 void MainWindow::on_filter8_clicked()
 {
-    int click = 7;
-    if(filtermap[click]==0)
+    QString base = "./data/stopSignal/"+currentuser->getname();
+
+    QString filePath = QFileDialog::getExistingDirectory(this, "请选择数据文件夹", base);
+
+    if(filePath=="")
+        return;
+
+    QDir Qdir(filePath);
+
+    QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+
+    filterresult.append(Qflist);
+
+    if(!readfilter(0))
     {
-        this->ui->filter8->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        filtermap[click]=1;
-    }
-    else
-    {
-        this->ui->filter8->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        filtermap[click]=0;
+        this->ui->filterinfo1->setText("暂无搜索结果");
+        this->ui->filterinfo2->setText("");
+        this->ui->filterinfo3->setText("");
+        this->ui->filterinfo4->setText("");
+        this->ui->filterinfo5->setText("");
+        this->ui->filterinfo6->setText("");
     }
 }
 
 void MainWindow::on_filter9_clicked()
 {
-    int click = 8;
-    if(filtermap[click]==0)
+    QString base = "./data/flanker/"+currentuser->getname();
+
+    QString filePath = QFileDialog::getExistingDirectory(this, "请选择数据文件夹", base);
+
+    if(filePath=="")
+        return;
+
+    QDir Qdir(filePath);
+
+    QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+
+    filterresult.append(Qflist);
+
+    if(!readfilter(0))
     {
-        this->ui->filter9->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        filtermap[click]=1;
-    }
-    else
-    {
-        this->ui->filter9->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        filtermap[click]=0;
+        this->ui->filterinfo1->setText("暂无搜索结果");
+        this->ui->filterinfo2->setText("");
+        this->ui->filterinfo3->setText("");
+        this->ui->filterinfo4->setText("");
+        this->ui->filterinfo5->setText("");
+        this->ui->filterinfo6->setText("");
     }
 }
 
 void MainWindow::on_filter10_clicked()
 {
-    int click = 9;
-    if(filtermap[click]==0)
+    QString base = "./data/stroop/"+currentuser->getname();
+
+    QString filePath = QFileDialog::getExistingDirectory(this, "请选择数据文件夹", base);
+
+    if(filePath=="")
+        return;
+
+    QDir Qdir(filePath);
+
+    QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+
+    filterresult.append(Qflist);
+
+    if(!readfilter(0))
     {
-        this->ui->filter10->setStyleSheet("border-radius:20px;background-color: rgb(170, 0, 127);color: rgb(255, 255, 255);");
-        filtermap[click]=1;
-    }
-    else
-    {
-        this->ui->filter10->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-        filtermap[click]=0;
+        this->ui->filterinfo1->setText("暂无搜索结果");
+        this->ui->filterinfo2->setText("");
+        this->ui->filterinfo3->setText("");
+        this->ui->filterinfo4->setText("");
+        this->ui->filterinfo5->setText("");
+        this->ui->filterinfo6->setText("");
     }
 }
 
 void MainWindow::on_filterreset_clicked()
 {
-    filterreset();
-    this->ui->filter1->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-    this->ui->filter2->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-    this->ui->filter3->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-    this->ui->filter4->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-    this->ui->filter5->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-    this->ui->filter6->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-    this->ui->filter7->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-    this->ui->filter8->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-    this->ui->filter9->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
-    this->ui->filter10->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+//    filterreset();
+//    this->ui->filter1->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+//    this->ui->filter2->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+//    this->ui->filter3->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+//    this->ui->filter4->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+//    this->ui->filter5->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+//    this->ui->filter6->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+//    this->ui->filter7->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+//    this->ui->filter8->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+//    this->ui->filter9->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+//    this->ui->filter10->setStyleSheet("border-radius:20px;background-color: rgb(85, 170, 255);color: rgb(255, 255, 255);");
+
+    filterresult.clear();
 
     this->ui->filterinfo1->setText("暂无搜索结果");
     this->ui->filterinfo2->setText("");
@@ -1305,53 +1466,53 @@ void MainWindow::on_filterinfo6_clicked()
     system(a);
 }
 
-void MainWindow::on_filterbutton_clicked()
-{
-    filterresult.clear();
-    if((this->ui->filtertext->text()=="1")||(this->ui->filtertext->text()=="tester1")||(this->ui->filtertext->text()=="女"))
-    {
-        if(filtermap[8])
-        {
-            QDir Qdir("./data/flanker/1/1");
-            QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
-            filterresult.append(Qflist);
-        }
+//void MainWindow::on_filterbutton_clicked()
+//{
+//    filterresult.clear();
+//    if((this->ui->filtertext->text()=="1")||(this->ui->filtertext->text()=="tester1")||(this->ui->filtertext->text()=="女"))
+//    {
+//        if(filtermap[8])
+//        {
+//            QDir Qdir("./data/flanker/1/1");
+//            QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+//            filterresult.append(Qflist);
+//        }
 
-        if(filtermap[9])
-        {
-        QDir Qdir2("./data/stroop/1/1");
-        QFileInfoList Qflist2=Qdir2.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
-        filterresult.append(Qflist2);
-        }
-    }
-    if((this->ui->filtertext->text()=="2")||(this->ui->filtertext->text()=="tester2")||(this->ui->filtertext->text()=="男"))
-    {
-        if(filtermap[8])
-        {
-            QDir Qdir("./data/flanker/1/2");
-            QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
-            filterresult.append(Qflist);
-        }
+//        if(filtermap[9])
+//        {
+//        QDir Qdir2("./data/stroop/1/1");
+//        QFileInfoList Qflist2=Qdir2.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+//        filterresult.append(Qflist2);
+//        }
+//    }
+//    if((this->ui->filtertext->text()=="2")||(this->ui->filtertext->text()=="tester2")||(this->ui->filtertext->text()=="男"))
+//    {
+//        if(filtermap[8])
+//        {
+//            QDir Qdir("./data/flanker/1/2");
+//            QFileInfoList Qflist=Qdir.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+//            filterresult.append(Qflist);
+//        }
 
-        if(filtermap[9])
-        {
-        QDir Qdir2("./data/stroop/1/2");
-        QFileInfoList Qflist2=Qdir2.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
-        filterresult.append(Qflist2);
-        }
-    }
-    if(this->ui->filtertext->text()=="")
-        on_admininfo_clicked();
-    if(!readfilter(0))
-    {
-        this->ui->filterinfo1->setText("暂无搜索结果");
-        this->ui->filterinfo2->setText("");
-        this->ui->filterinfo3->setText("");
-        this->ui->filterinfo4->setText("");
-        this->ui->filterinfo5->setText("");
-        this->ui->filterinfo6->setText("");
-    }
-}
+//        if(filtermap[9])
+//        {
+//        QDir Qdir2("./data/stroop/1/2");
+//        QFileInfoList Qflist2=Qdir2.entryInfoList(QDir::Files|QDir::NoDotAndDotDot);
+//        filterresult.append(Qflist2);
+//        }
+//    }
+//    if(this->ui->filtertext->text()=="")
+//        on_admininfo_clicked();
+//    if(!readfilter(0))
+//    {
+//        this->ui->filterinfo1->setText("暂无搜索结果");
+//        this->ui->filterinfo2->setText("");
+//        this->ui->filterinfo3->setText("");
+//        this->ui->filterinfo4->setText("");
+//        this->ui->filterinfo5->setText("");
+//        this->ui->filterinfo6->setText("");
+//    }
+//}
 
 void MainWindow::on_filter10_3_clicked()
 {
@@ -1390,7 +1551,7 @@ void MainWindow::on_filter10_4_clicked()
     connect(accessManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(finishedSlot(QNetworkReply*)));
 
     QNetworkRequest request;
-    request.setUrl(QUrl("http://localhost:7071/get/results/participant?admin=1&participant="+sName));
+    request.setUrl(QUrl("http://localhost:7071/get/results/participant?admin="+currentuser->getname()+"&participant="+sName));
     accessManager->get(request);
 }
 
@@ -1410,7 +1571,7 @@ void MainWindow::on_filter10_5_clicked()
     connect(accessManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(finishedSlot(QNetworkReply*)));
 
     QNetworkRequest request;
-    request.setUrl(QUrl("http://localhost:7071/get/results/group?admin=1&group="+sName));
+    request.setUrl(QUrl("http://localhost:7071/get/results/group?admin="+currentuser->getname()+"&group="+sName));
     accessManager->get(request);
 }
 
