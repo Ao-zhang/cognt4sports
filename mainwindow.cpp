@@ -483,6 +483,8 @@ void MainWindow::on_goUserInfo_2_clicked()
     qDebug() << "current tester: "<<currenttester->name;
     qDebug() << "current tester group: "<<currenttester->group;
 
+    if(currenttester->group=="")
+        currenttester->group="default";
     QString param = "admin="+currentuser->getname()+"&participant="+currenttester->name+"&session=1&group="+currenttester->group;
 
     switch(exammap){
